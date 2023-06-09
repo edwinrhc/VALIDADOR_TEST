@@ -1,7 +1,6 @@
 ﻿Imports System.IO
 Imports System.Net
 Imports System.Text
-Imports CONSTANTES.Constante
 
 Module Utilitario
 

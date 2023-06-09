@@ -1,5 +1,4 @@
-﻿Imports System.Reflection.Emit
-Imports D_VALIDADOR
+﻿Imports D_VALIDADOR
 Imports E_VALIDADOR
 
 
@@ -93,7 +92,7 @@ Public Class NValidador
             Return Tabla
         Catch ex As Exception
             MsgBox(ex.Message)
-        Return Nothing
+            Return Nothing
         End Try
     End Function
 

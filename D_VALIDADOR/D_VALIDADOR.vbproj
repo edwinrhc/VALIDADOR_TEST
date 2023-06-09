@@ -74,6 +74,7 @@
   <ItemGroup>
     <Content Include="Anotacacion de Conexion -Example.txt" />
     <Compile Include="Conexion.vb" />
+    <Compile Include="DConsultas.vb" />
     <Compile Include="DUsuario.vb" />
     <Compile Include="DValidador.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

@@ -28,6 +28,8 @@ Partial Class frmMain
         Me.ImprimirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OBSERVACIONESToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DatosPersonalesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SALIRToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.tssFecha = New System.Windows.Forms.ToolStripStatusLabel()
@@ -45,7 +47,7 @@ Partial Class frmMain
         '
         Me.MenuStrip1.AutoSize = False
         Me.MenuStrip1.BackColor = System.Drawing.SystemColors.InactiveCaption
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PADRONToolStripMenuItem, Me.ToolStripMenuItem1, Me.SALIRToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PADRONToolStripMenuItem, Me.ToolStripMenuItem1, Me.OBSERVACIONESToolStripMenuItem, Me.SALIRToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1025, 54)
@@ -86,6 +88,21 @@ Partial Class frmMain
         Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
         Me.ToolStripMenuItem4.Size = New System.Drawing.Size(208, 22)
         Me.ToolStripMenuItem4.Text = "CARGAS REALIZADAS"
+        '
+        'OBSERVACIONESToolStripMenuItem
+        '
+        Me.OBSERVACIONESToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DatosPersonalesToolStripMenuItem})
+        Me.OBSERVACIONESToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.OBSERVACIONESToolStripMenuItem.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.OBSERVACIONESToolStripMenuItem.Name = "OBSERVACIONESToolStripMenuItem"
+        Me.OBSERVACIONESToolStripMenuItem.Size = New System.Drawing.Size(123, 50)
+        Me.OBSERVACIONESToolStripMenuItem.Text = "OBSERVACIONES"
+        '
+        'DatosPersonalesToolStripMenuItem
+        '
+        Me.DatosPersonalesToolStripMenuItem.Name = "DatosPersonalesToolStripMenuItem"
+        Me.DatosPersonalesToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
+        Me.DatosPersonalesToolStripMenuItem.Text = "DATOS PERSONALES"
         '
         'SALIRToolStripMenuItem
         '
@@ -194,4 +211,6 @@ Partial Class frmMain
     Friend WithEvents ToolStripMenuItem4 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tssNombreCompleto As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents tssVersion As System.Windows.Forms.ToolStripStatusLabel
+    Friend WithEvents OBSERVACIONESToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DatosPersonalesToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -152,16 +152,10 @@
     <Compile Include="Proceso\frmCargasRealizadas.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Proceso\verEmpleador.Designer.vb">
-      <DependentUpon>verEmpleador.vb</DependentUpon>
+    <Compile Include="Proceso\frmObsDatosPersonales.Designer.vb">
+      <DependentUpon>frmObsDatosPersonales.vb</DependentUpon>
     </Compile>
-    <Compile Include="Proceso\verEmpleador.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Proceso\verRemuneraciones.Designer.vb">
-      <DependentUpon>verRemuneraciones.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Proceso\verRemuneraciones.vb">
+    <Compile Include="Proceso\frmObsDatosPersonales.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Proceso\VerTrabajador.Designer.vb">
@@ -197,11 +191,8 @@
     <EmbeddedResource Include="Proceso\frmCargasRealizadas.resx">
       <DependentUpon>frmCargasRealizadas.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Proceso\verEmpleador.resx">
-      <DependentUpon>verEmpleador.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Proceso\verRemuneraciones.resx">
-      <DependentUpon>verRemuneraciones.vb</DependentUpon>
+    <EmbeddedResource Include="Proceso\frmObsDatosPersonales.resx">
+      <DependentUpon>frmObsDatosPersonales.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proceso\VerTrabajador.resx">
       <DependentUpon>VerTrabajador.vb</DependentUpon>
@@ -257,9 +248,39 @@
   <ItemGroup>
     <Content Include="icons8-system-64.ico" />
     <Content Include="icons8-system-64_red.ico" />
+    <None Include="Resources\csv.png" />
     <None Include="Resources\Image1.bmp" />
     <None Include="Resources\icons8-accede-redondeado-derecho-64.png" />
     <None Include="Resources\descargar-pdf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

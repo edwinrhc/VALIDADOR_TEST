@@ -1,6 +1,4 @@
 ﻿Imports System.IO
-Imports System.Windows.Forms.VisualStyles.VisualStyleElement
-Imports CONSTANTES.Constante
 
 Imports iTextSharp.text
 Imports iTextSharp.text.pdf
@@ -72,9 +70,6 @@ Public Class frmCargasRealizadas
             btnResumenCarga.Enabled = True
             btnVisualizacion.Enabled = True
         End If
-
-
-
 
         If Len(Trim(txtNumCarga.Text)) > 0 Then
             Buscar()
@@ -306,6 +301,7 @@ Public Class frmCargasRealizadas
         col4.DefaultCellStyle.BackColor = Color.White
         col5.ReadOnly = True
         col5.DefaultCellStyle.BackColor = Color.White
+
     End Sub
 
 
@@ -611,7 +607,7 @@ Public Class frmCargasRealizadas
             tableTipoErrorEmpleador.SetWidths({0.2F, 0.8F})
             tableTipoErrorEmpleador.WidthPercentage = 100 ' Ocupar todo el ancho de la página
             tableTipoErrorEmpleador.DefaultCell.Border = PdfPCell.NO_BORDER ' Eliminar los bordes por defecto de las celdas
-            
+
             'Si encontramos un registro de datosTipoErrorEmpleador mostrar
             If datosTipoErrorEmpleador.Rows.Count > 0 Then
                 Dim cellTipoErrorEmpleador As New PdfPCell(New Phrase("Tipo de Carga:", New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 9, iTextSharp.text.Font.BOLD)))
@@ -1228,6 +1224,5 @@ Public Class frmCargasRealizadas
         End If
 
     End Sub
-
 
 End Class

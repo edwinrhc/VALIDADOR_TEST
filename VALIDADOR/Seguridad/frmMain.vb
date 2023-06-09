@@ -121,65 +121,6 @@ Public Class frmMain
     End Sub
 
 
-    Private Sub ComunicadoXDocumentoToolStripMenuItem_Click(sender As Object, e As EventArgs)
-
-
-        'Dim frm As New frmBandejaSesion
-        'frm.codigoUsuario = Me.codigoUsuario
-        'frm.MdiParent = Me
-        'frm.Show()
-    End Sub
-
-
-    Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs)
-
-        'Dim frm As New frmEmitirGuia
-        'frm.codigoUsuario = Me.codigoUsuario
-        'frm.codigoUsuarioSede = Me.codigoUsuarioSede
-        'frm.codigoSede = Me.codigoSede
-        'frm.MdiParent = Me
-        'frm.Show()
-
-    End Sub
-
-    Private Sub ConsultarGuíaToolStripMenuItem_Click(sender As Object, e As EventArgs)
-        'Dim frm As New frmConsultarGuia
-        'frm.MdiParent = Me
-        'frm.Show()
-    End Sub
-
-    Private Sub PENDIENTESDEIMPRESIÓNToolStripMenuItem_Click(sender As Object, e As EventArgs)
-        'Dim frm As New frmPendientesResolucion
-        'frm.codigoUsuario = Me.codigoUsuario
-        'frm.MdiParent = Me
-        'frm.Show()
-    End Sub
-
-    Private Sub BANDEJASATENTIDOSToolStripMenuItem_Click(sender As Object, e As EventArgs)
-
-        'Dim frm As New frmAtendidos
-        'frm.codigoUsuario = Me.codigoUsuario
-        'frm.MdiParent = Me
-        'frm.Show()
-    End Sub
-
-    Private Sub MToolStripMenuItem_Click(sender As Object, e As EventArgs)
-
-        'Dim frm As New frmBandejaMiembros
-        'frm.codigoUsuario = Me.codigoUsuario
-        'frm.MdiParent = Me
-        'frm.Show()
-    End Sub
-
-    Private Sub NÚMERORESOLUCIONESToolStripMenuItem_Click(sender As Object, e As EventArgs)
-
-        'Dim frm As New frmRangoNumeroResolucion
-        'frm.codigoUsuario = Me.codigoUsuario
-        'frm.MdiParent = Me
-        'frm.Show()
-    End Sub
-
-
     Private Sub ToolStripMenuItem4_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem4.Click
 
 
@@ -196,5 +137,16 @@ Public Class frmMain
 
     Private Sub tssVersion_Click(sender As Object, e As EventArgs) Handles tssVersion.Click
 
+    End Sub
+
+    Private Sub PADRONToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PADRONToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub DatosPersonalesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DatosPersonalesToolStripMenuItem.Click
+        Dim frm As New frmObsDatosPersonales
+
+        frm.MdiParent = Me
+        frm.Show()
     End Sub
 End Class

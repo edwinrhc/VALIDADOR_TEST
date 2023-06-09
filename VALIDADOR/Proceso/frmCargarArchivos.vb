@@ -1,7 +1,4 @@
 ﻿Imports System.IO
-Imports System.Web.UI.WebControls.Expressions
-Imports System.Windows.Forms.VisualStyles.VisualStyleElement
-Imports DocumentFormat.OpenXml.Wordprocessing
 Imports N_VALIDADOR
 
 Public Class frmCargarArchivos

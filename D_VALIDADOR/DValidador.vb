@@ -1,6 +1,5 @@
 ﻿Option Explicit On
 Imports System.IO
-Imports System.Threading
 Imports System.Windows.Forms
 Imports E_VALIDADOR
 
@@ -835,7 +834,7 @@ Public Class DValidador
     End Function
 #End Region
 
-#Region "RESULDATDO DE CARGA REALIZADA"
+#Region "RESULTADO DE CARGA REALIZADA"
     Public Function RESULTADO_CARGA_REALIZADA(Valor As String) As DataTable
 
         Dim dtResultado As New DataTable()
