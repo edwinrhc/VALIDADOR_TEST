@@ -25,11 +25,12 @@ Partial Class frmMain
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.PADRONToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ImprimirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SMICargaArchivosEmpleadores = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SMIfrmCargaRealizada = New System.Windows.Forms.ToolStripMenuItem()
         Me.OBSERVACIONESToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DatosPersonalesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TSMDatosPersonales = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TSMCargaEmpleador = New System.Windows.Forms.ToolStripMenuItem()
         Me.SALIRToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.tssFecha = New System.Windows.Forms.ToolStripStatusLabel()
@@ -39,7 +40,6 @@ Partial Class frmMain
         Me.tssAmbiente = New System.Windows.Forms.ToolStripStatusLabel()
         Me.tssNombreCompleto = New System.Windows.Forms.ToolStripStatusLabel()
         Me.tssVersion = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.CARGAEMPLEADORToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -58,52 +58,60 @@ Partial Class frmMain
         'PADRONToolStripMenuItem
         '
         Me.PADRONToolStripMenuItem.BackColor = System.Drawing.SystemColors.InactiveCaption
-        Me.PADRONToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ImprimirToolStripMenuItem})
+        Me.PADRONToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SMICargaArchivosEmpleadores})
         Me.PADRONToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PADRONToolStripMenuItem.ForeColor = System.Drawing.Color.MidnightBlue
         Me.PADRONToolStripMenuItem.Name = "PADRONToolStripMenuItem"
         Me.PADRONToolStripMenuItem.Size = New System.Drawing.Size(78, 50)
         Me.PADRONToolStripMenuItem.Text = "PROCESO"
         '
-        'ImprimirToolStripMenuItem
+        'SMICargaArchivosEmpleadores
         '
-        Me.ImprimirToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control
-        Me.ImprimirToolStripMenuItem.Image = CType(resources.GetObject("ImprimirToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.ImprimirToolStripMenuItem.Name = "ImprimirToolStripMenuItem"
-        Me.ImprimirToolStripMenuItem.Size = New System.Drawing.Size(305, 22)
-        Me.ImprimirToolStripMenuItem.Text = "CARGA DE ARCHIVOS EMPLEADORES"
+        Me.SMICargaArchivosEmpleadores.BackColor = System.Drawing.SystemColors.Control
+        Me.SMICargaArchivosEmpleadores.Image = CType(resources.GetObject("SMICargaArchivosEmpleadores.Image"), System.Drawing.Image)
+        Me.SMICargaArchivosEmpleadores.Name = "SMICargaArchivosEmpleadores"
+        Me.SMICargaArchivosEmpleadores.Size = New System.Drawing.Size(305, 22)
+        Me.SMICargaArchivosEmpleadores.Text = "CARGA DE ARCHIVOS EMPLEADORES"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.BackColor = System.Drawing.SystemColors.InactiveCaption
-        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem4})
+        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SMIfrmCargaRealizada})
         Me.ToolStripMenuItem1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStripMenuItem1.ForeColor = System.Drawing.Color.MidnightBlue
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
         Me.ToolStripMenuItem1.Size = New System.Drawing.Size(93, 50)
         Me.ToolStripMenuItem1.Text = "CONSULTAS"
         '
-        'ToolStripMenuItem4
+        'SMIfrmCargaRealizada
         '
-        Me.ToolStripMenuItem4.Image = CType(resources.GetObject("ToolStripMenuItem4.Image"), System.Drawing.Image)
-        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
-        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(208, 22)
-        Me.ToolStripMenuItem4.Text = "CARGAS REALIZADAS"
+        Me.SMIfrmCargaRealizada.Image = CType(resources.GetObject("SMIfrmCargaRealizada.Image"), System.Drawing.Image)
+        Me.SMIfrmCargaRealizada.Name = "SMIfrmCargaRealizada"
+        Me.SMIfrmCargaRealizada.Size = New System.Drawing.Size(208, 22)
+        Me.SMIfrmCargaRealizada.Text = "CARGAS REALIZADAS"
         '
         'OBSERVACIONESToolStripMenuItem
         '
-        Me.OBSERVACIONESToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DatosPersonalesToolStripMenuItem, Me.CARGAEMPLEADORToolStripMenuItem})
+        Me.OBSERVACIONESToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSMDatosPersonales, Me.TSMCargaEmpleador})
         Me.OBSERVACIONESToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
         Me.OBSERVACIONESToolStripMenuItem.ForeColor = System.Drawing.Color.MidnightBlue
         Me.OBSERVACIONESToolStripMenuItem.Name = "OBSERVACIONESToolStripMenuItem"
         Me.OBSERVACIONESToolStripMenuItem.Size = New System.Drawing.Size(123, 50)
         Me.OBSERVACIONESToolStripMenuItem.Text = "OBSERVACIONES"
         '
-        'DatosPersonalesToolStripMenuItem
+        'TSMDatosPersonales
         '
-        Me.DatosPersonalesToolStripMenuItem.Name = "DatosPersonalesToolStripMenuItem"
-        Me.DatosPersonalesToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
-        Me.DatosPersonalesToolStripMenuItem.Text = "DATOS PERSONALES"
+        Me.TSMDatosPersonales.Image = Global.VALIDADOR.My.Resources.Resources.icons8_accede_redondeado_derecho_64
+        Me.TSMDatosPersonales.Name = "TSMDatosPersonales"
+        Me.TSMDatosPersonales.Size = New System.Drawing.Size(203, 22)
+        Me.TSMDatosPersonales.Text = "DATOS PERSONALES"
+        '
+        'TSMCargaEmpleador
+        '
+        Me.TSMCargaEmpleador.Image = Global.VALIDADOR.My.Resources.Resources.icons8_accede_redondeado_derecho_64
+        Me.TSMCargaEmpleador.Name = "TSMCargaEmpleador"
+        Me.TSMCargaEmpleador.Size = New System.Drawing.Size(203, 22)
+        Me.TSMCargaEmpleador.Text = "CARGA EMPLEADOR"
         '
         'SALIRToolStripMenuItem
         '
@@ -174,12 +182,6 @@ Partial Class frmMain
         Me.tssVersion.Name = "tssVersion"
         Me.tssVersion.Size = New System.Drawing.Size(16, 28)
         '
-        'CARGAEMPLEADORToolStripMenuItem
-        '
-        Me.CARGAEMPLEADORToolStripMenuItem.Name = "CARGAEMPLEADORToolStripMenuItem"
-        Me.CARGAEMPLEADORToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
-        Me.CARGAEMPLEADORToolStripMenuItem.Text = "CARGA EMPLEADOR"
-        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -207,7 +209,7 @@ Partial Class frmMain
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
     Friend WithEvents PADRONToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SALIRToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ImprimirToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents SMICargaArchivosEmpleadores As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents StatusStrip1 As System.Windows.Forms.StatusStrip
     Friend WithEvents tssFecha As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents tssUsuario As System.Windows.Forms.ToolStripStatusLabel
@@ -215,10 +217,10 @@ Partial Class frmMain
     Friend WithEvents tssIp As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents tssAmbiente As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem4 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents SMIfrmCargaRealizada As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tssNombreCompleto As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents tssVersion As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents OBSERVACIONESToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents DatosPersonalesToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents CARGAEMPLEADORToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TSMDatosPersonales As ToolStripMenuItem
+    Friend WithEvents TSMCargaEmpleador As ToolStripMenuItem
 End Class

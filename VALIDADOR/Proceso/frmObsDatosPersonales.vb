@@ -237,5 +237,17 @@ Public Class frmObsDatosPersonales
         End Using
     End Sub
 
+    Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
 
+
+        txtNumCarga.Text = ""
+        txtNumCarga.Focus()
+        'Limpiar DataGriview
+        dtgDatosObsDatosPersonales.DataSource = Nothing
+
+    End Sub
+
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+        Me.Close()
+    End Sub
 End Class

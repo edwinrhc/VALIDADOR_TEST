@@ -67,12 +67,7 @@ Public Class frmMain
     End Property
 
 
-    Private Sub ImprimirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ImprimirToolStripMenuItem.Click
-        Dim frm As New frmCargarArchivos
-        frm.codigoUsuario = Me.codigoUsuario
-        frm.MdiParent = Me
-        frm.Show()
-    End Sub
+
 
     Private Sub frmMain_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         frmLogin.Close()
@@ -121,15 +116,7 @@ Public Class frmMain
     End Sub
 
 
-    Private Sub ToolStripMenuItem4_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem4.Click
 
-
-        Dim frm As New frmCargasRealizadas
-        frm.codigoUsuario = Me.codigoUsuario
-        frm.MdiParent = Me
-        frm.Show()
-
-    End Sub
 
     Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
 
@@ -143,10 +130,77 @@ Public Class frmMain
 
     End Sub
 
-    Private Sub DatosPersonalesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DatosPersonalesToolStripMenuItem.Click
-        Dim frm As New frmObsDatosPersonales
 
-        frm.MdiParent = Me
-        frm.Show()
+
+    Private Sub OBSERVACIONESToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OBSERVACIONESToolStripMenuItem.Click
+
+    End Sub
+
+
+
+    Private Sub SMICargaArchivosEmpleadores_Click(sender As Object, e As EventArgs) Handles SMICargaArchivosEmpleadores.Click
+
+        ' Verificar si el formulario ya está abierto
+        Dim frm As frmCargarArchivos = Application.OpenForms.OfType(Of frmCargarArchivos).FirstOrDefault()
+
+        If frm IsNot Nothing Then
+            ' El formulario ya está abierto, enfocarlo y traerlo al frente
+            frm.Focus()
+        Else
+            ' El formulario no está abierto, crear una nueva instancia y mostrarlo
+            frm = New frmCargarArchivos()
+            frm.codigoUsuario = Me.codigoUsuario
+            frm.MdiParent = Me
+            frm.Show()
+        End If
+
+    End Sub
+
+    Private Sub SMIfrmCargaRealizada_Click(sender As Object, e As EventArgs) Handles SMIfrmCargaRealizada.Click
+
+        'Verificar si el formulario ya está abierto
+        Dim frm As frmCargasRealizadas = Application.OpenForms.OfType(Of frmCargasRealizadas).FirstOrDefault()
+        If frm IsNot Nothing Then
+            'El formulario ya está abierto, enfocarlo y traerlo al frente
+            frm.Focus()
+        Else
+            'El formulario no está abierto, crear una nueva instancia y mostrarlo
+            frm = New frmCargasRealizadas()
+            frm.codigoUsuario = Me.codigoUsuario
+            frm.MdiParent = Me
+            frm.Show()
+        End If
+
+    End Sub
+
+    Private Sub TSMCargaEmpleador_Click(sender As Object, e As EventArgs) Handles TSMCargaEmpleador.Click
+        'Dim frm As New frmObsCargaEmpleador
+        'frm.MdiParent = Me
+        'frm.Show()
+        Dim frm As frmObsCargaEmpleador = Application.OpenForms.OfType(Of frmObsCargaEmpleador).FirstOrDefault()
+        If frm IsNot Nothing Then
+            frm.Focus()
+        Else
+            frm = New frmObsCargaEmpleador()
+            frm.MdiParent = Me
+            frm.Show()
+        End If
+
+    End Sub
+
+    Private Sub TSMDatosPersonales_Click(sender As Object, e As EventArgs) Handles TSMDatosPersonales.Click
+        'Dim frm As New frmObsDatosPersonales
+        'frm.MdiParent = Me
+        'frm.Show()
+
+        Dim frm As frmObsDatosPersonales = Application.OpenForms.OfType(Of frmObsDatosPersonales).FirstOrDefault()
+
+        If frm IsNot Nothing Then
+            frm.Focus()
+        Else
+            frm = New frmObsDatosPersonales()
+            frm.MdiParent = Me
+            frm.Show()
+        End If
     End Sub
 End Class

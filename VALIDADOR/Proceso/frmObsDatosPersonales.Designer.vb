@@ -25,27 +25,27 @@ Partial Class frmObsDatosPersonales
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmObsDatosPersonales))
         Me.gbIFiltros = New System.Windows.Forms.GroupBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.btnLimpiar = New System.Windows.Forms.Button()
-        Me.btnBuscar = New System.Windows.Forms.Button()
         Me.txtNumCarga = New System.Windows.Forms.TextBox()
         Me.gbDatos = New System.Windows.Forms.GroupBox()
-        Me.btnSalir = New System.Windows.Forms.Button()
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.dtgDatosObsDatosPersonales = New System.Windows.Forms.DataGridView()
+        Me.btnSalir = New System.Windows.Forms.Button()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.btnExportaCSV = New System.Windows.Forms.Button()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.dtgDatosObsDatosPersonales = New System.Windows.Forms.DataGridView()
         Me.pnlTitulo = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.btnLimpiar = New System.Windows.Forms.Button()
+        Me.btnBuscar = New System.Windows.Forms.Button()
         Me.gbIFiltros.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbDatos.SuspendLayout()
+        CType(Me.dtgDatosObsDatosPersonales, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dtgDatosObsDatosPersonales, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlTitulo.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'gbIFiltros
@@ -75,6 +75,143 @@ Partial Class frmObsDatosPersonales
         Me.Label3.Size = New System.Drawing.Size(91, 16)
         Me.Label3.TabIndex = 11
         Me.Label3.Text = "Nro. de Carga"
+        '
+        'txtNumCarga
+        '
+        Me.txtNumCarga.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtNumCarga.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNumCarga.Location = New System.Drawing.Point(356, 29)
+        Me.txtNumCarga.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtNumCarga.Name = "txtNumCarga"
+        Me.txtNumCarga.Size = New System.Drawing.Size(211, 22)
+        Me.txtNumCarga.TabIndex = 4
+        '
+        'gbDatos
+        '
+        Me.gbDatos.Controls.Add(Me.btnSalir)
+        Me.gbDatos.Controls.Add(Me.lbltotal)
+        Me.gbDatos.Controls.Add(Me.Label6)
+        Me.gbDatos.Controls.Add(Me.PictureBox5)
+        Me.gbDatos.Controls.Add(Me.btnExportaCSV)
+        Me.gbDatos.Controls.Add(Me.PictureBox3)
+        Me.gbDatos.Controls.Add(Me.dtgDatosObsDatosPersonales)
+        Me.gbDatos.Location = New System.Drawing.Point(12, 169)
+        Me.gbDatos.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.gbDatos.Name = "gbDatos"
+        Me.gbDatos.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.gbDatos.Size = New System.Drawing.Size(1262, 602)
+        Me.gbDatos.TabIndex = 28
+        Me.gbDatos.TabStop = False
+        Me.gbDatos.Text = "v"
+        '
+        'lbltotal
+        '
+        Me.lbltotal.AutoSize = True
+        Me.lbltotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbltotal.Location = New System.Drawing.Point(953, 575)
+        Me.lbltotal.Name = "lbltotal"
+        Me.lbltotal.Size = New System.Drawing.Size(38, 16)
+        Me.lbltotal.TabIndex = 21
+        Me.lbltotal.Text = "Total"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.Blue
+        Me.Label6.Location = New System.Drawing.Point(51, 23)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(159, 13)
+        Me.Label6.TabIndex = 20
+        Me.Label6.Text = "Bandeja de Observaciones"
+        '
+        'dtgDatosObsDatosPersonales
+        '
+        Me.dtgDatosObsDatosPersonales.AllowUserToAddRows = False
+        Me.dtgDatosObsDatosPersonales.AllowUserToDeleteRows = False
+        Me.dtgDatosObsDatosPersonales.AllowUserToOrderColumns = True
+        Me.dtgDatosObsDatosPersonales.AllowUserToResizeColumns = False
+        Me.dtgDatosObsDatosPersonales.AllowUserToResizeRows = False
+        Me.dtgDatosObsDatosPersonales.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.dtgDatosObsDatosPersonales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtgDatosObsDatosPersonales.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.dtgDatosObsDatosPersonales.Location = New System.Drawing.Point(22, 39)
+        Me.dtgDatosObsDatosPersonales.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.dtgDatosObsDatosPersonales.Name = "dtgDatosObsDatosPersonales"
+        Me.dtgDatosObsDatosPersonales.RowHeadersVisible = False
+        Me.dtgDatosObsDatosPersonales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dtgDatosObsDatosPersonales.Size = New System.Drawing.Size(1084, 532)
+        Me.dtgDatosObsDatosPersonales.TabIndex = 12
+        '
+        'btnSalir
+        '
+        Me.btnSalir.BackColor = System.Drawing.SystemColors.Control
+        Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
+        Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSalir.Location = New System.Drawing.Point(1149, 530)
+        Me.btnSalir.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.btnSalir.Name = "btnSalir"
+        Me.btnSalir.Size = New System.Drawing.Size(95, 41)
+        Me.btnSalir.TabIndex = 24
+        Me.btnSalir.Text = "     Salir"
+        Me.btnSalir.UseVisualStyleBackColor = False
+        '
+        'PictureBox5
+        '
+        Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
+        Me.PictureBox5.Location = New System.Drawing.Point(22, 18)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(35, 19)
+        Me.PictureBox5.TabIndex = 19
+        Me.PictureBox5.TabStop = False
+        '
+        'btnExportaCSV
+        '
+        Me.btnExportaCSV.BackColor = System.Drawing.SystemColors.Control
+        Me.btnExportaCSV.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnExportaCSV.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnExportaCSV.Image = Global.VALIDADOR.My.Resources.Resources.csv
+        Me.btnExportaCSV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnExportaCSV.Location = New System.Drawing.Point(1112, 39)
+        Me.btnExportaCSV.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.btnExportaCSV.Name = "btnExportaCSV"
+        Me.btnExportaCSV.Size = New System.Drawing.Size(99, 48)
+        Me.btnExportaCSV.TabIndex = 13
+        Me.btnExportaCSV.Text = "                CSV  "
+        Me.btnExportaCSV.UseVisualStyleBackColor = False
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
+        Me.PictureBox3.Location = New System.Drawing.Point(9, 1)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(17, 19)
+        Me.PictureBox3.TabIndex = 8
+        Me.PictureBox3.TabStop = False
+        '
+        'pnlTitulo
+        '
+        Me.pnlTitulo.AutoSize = True
+        Me.pnlTitulo.BackgroundImage = CType(resources.GetObject("pnlTitulo.BackgroundImage"), System.Drawing.Image)
+        Me.pnlTitulo.Controls.Add(Me.Label1)
+        Me.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top
+        Me.pnlTitulo.Location = New System.Drawing.Point(0, 0)
+        Me.pnlTitulo.Name = "pnlTitulo"
+        Me.pnlTitulo.Size = New System.Drawing.Size(1309, 32)
+        Me.pnlTitulo.TabIndex = 27
+        '
+        'Label1
+        '
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(12, 9)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(554, 23)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "OBSERVACIONES - DATOS PERSONALES"
         '
         'PictureBox2
         '
@@ -115,143 +252,6 @@ Partial Class frmObsDatosPersonales
         Me.btnBuscar.Text = "     Buscar"
         Me.btnBuscar.UseVisualStyleBackColor = False
         '
-        'txtNumCarga
-        '
-        Me.txtNumCarga.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtNumCarga.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNumCarga.Location = New System.Drawing.Point(356, 29)
-        Me.txtNumCarga.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txtNumCarga.Name = "txtNumCarga"
-        Me.txtNumCarga.Size = New System.Drawing.Size(211, 22)
-        Me.txtNumCarga.TabIndex = 4
-        '
-        'gbDatos
-        '
-        Me.gbDatos.Controls.Add(Me.btnSalir)
-        Me.gbDatos.Controls.Add(Me.lbltotal)
-        Me.gbDatos.Controls.Add(Me.Label6)
-        Me.gbDatos.Controls.Add(Me.PictureBox5)
-        Me.gbDatos.Controls.Add(Me.btnExportaCSV)
-        Me.gbDatos.Controls.Add(Me.PictureBox3)
-        Me.gbDatos.Controls.Add(Me.dtgDatosObsDatosPersonales)
-        Me.gbDatos.Location = New System.Drawing.Point(12, 169)
-        Me.gbDatos.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.gbDatos.Name = "gbDatos"
-        Me.gbDatos.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.gbDatos.Size = New System.Drawing.Size(1262, 602)
-        Me.gbDatos.TabIndex = 28
-        Me.gbDatos.TabStop = False
-        Me.gbDatos.Text = "v"
-        '
-        'btnSalir
-        '
-        Me.btnSalir.BackColor = System.Drawing.SystemColors.Control
-        Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
-        Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSalir.Location = New System.Drawing.Point(1149, 530)
-        Me.btnSalir.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(95, 41)
-        Me.btnSalir.TabIndex = 24
-        Me.btnSalir.Text = "     Salir"
-        Me.btnSalir.UseVisualStyleBackColor = False
-        '
-        'lbltotal
-        '
-        Me.lbltotal.AutoSize = True
-        Me.lbltotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbltotal.Location = New System.Drawing.Point(953, 575)
-        Me.lbltotal.Name = "lbltotal"
-        Me.lbltotal.Size = New System.Drawing.Size(38, 16)
-        Me.lbltotal.TabIndex = 21
-        Me.lbltotal.Text = "Total"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.Blue
-        Me.Label6.Location = New System.Drawing.Point(51, 23)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(159, 13)
-        Me.Label6.TabIndex = 20
-        Me.Label6.Text = "Bandeja de Observaciones"
-        '
-        'PictureBox5
-        '
-        Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
-        Me.PictureBox5.Location = New System.Drawing.Point(22, 18)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(35, 19)
-        Me.PictureBox5.TabIndex = 19
-        Me.PictureBox5.TabStop = False
-        '
-        'btnExportaCSV
-        '
-        Me.btnExportaCSV.BackColor = System.Drawing.SystemColors.Control
-        Me.btnExportaCSV.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnExportaCSV.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnExportaCSV.Image = Global.VALIDADOR.My.Resources.Resources.csv
-        Me.btnExportaCSV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnExportaCSV.Location = New System.Drawing.Point(1112, 39)
-        Me.btnExportaCSV.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.btnExportaCSV.Name = "btnExportaCSV"
-        Me.btnExportaCSV.Size = New System.Drawing.Size(99, 48)
-        Me.btnExportaCSV.TabIndex = 13
-        Me.btnExportaCSV.Text = "                CSV  "
-        Me.btnExportaCSV.UseVisualStyleBackColor = False
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(9, 1)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(17, 19)
-        Me.PictureBox3.TabIndex = 8
-        Me.PictureBox3.TabStop = False
-        '
-        'dtgDatosObsDatosPersonales
-        '
-        Me.dtgDatosObsDatosPersonales.AllowUserToAddRows = False
-        Me.dtgDatosObsDatosPersonales.AllowUserToDeleteRows = False
-        Me.dtgDatosObsDatosPersonales.AllowUserToOrderColumns = True
-        Me.dtgDatosObsDatosPersonales.AllowUserToResizeColumns = False
-        Me.dtgDatosObsDatosPersonales.AllowUserToResizeRows = False
-        Me.dtgDatosObsDatosPersonales.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.dtgDatosObsDatosPersonales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dtgDatosObsDatosPersonales.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.dtgDatosObsDatosPersonales.Location = New System.Drawing.Point(22, 39)
-        Me.dtgDatosObsDatosPersonales.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.dtgDatosObsDatosPersonales.Name = "dtgDatosObsDatosPersonales"
-        Me.dtgDatosObsDatosPersonales.RowHeadersVisible = False
-        Me.dtgDatosObsDatosPersonales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtgDatosObsDatosPersonales.Size = New System.Drawing.Size(1084, 532)
-        Me.dtgDatosObsDatosPersonales.TabIndex = 12
-        '
-        'pnlTitulo
-        '
-        Me.pnlTitulo.AutoSize = True
-        Me.pnlTitulo.BackgroundImage = CType(resources.GetObject("pnlTitulo.BackgroundImage"), System.Drawing.Image)
-        Me.pnlTitulo.Controls.Add(Me.Label1)
-        Me.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top
-        Me.pnlTitulo.Location = New System.Drawing.Point(0, 0)
-        Me.pnlTitulo.Name = "pnlTitulo"
-        Me.pnlTitulo.Size = New System.Drawing.Size(1309, 32)
-        Me.pnlTitulo.TabIndex = 27
-        '
-        'Label1
-        '
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(12, 9)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(554, 23)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "OBSERVACIONES - DATOS PERSONALES"
-        '
         'frmObsDatosPersonales
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -265,13 +265,13 @@ Partial Class frmObsDatosPersonales
         Me.Text = "Observaciones de Datos Personales"
         Me.gbIFiltros.ResumeLayout(False)
         Me.gbIFiltros.PerformLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbDatos.ResumeLayout(False)
         Me.gbDatos.PerformLayout()
+        CType(Me.dtgDatosObsDatosPersonales, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dtgDatosObsDatosPersonales, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlTitulo.ResumeLayout(False)
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

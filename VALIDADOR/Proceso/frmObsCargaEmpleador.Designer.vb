@@ -261,6 +261,7 @@ Partial Class frmObsCargaEmpleador
         Me.Controls.Add(Me.gbIFiltros)
         Me.Controls.Add(Me.pnlTitulo)
         Me.Name = "frmObsCargaEmpleador"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmObsCargaEmpleador"
         Me.pnlTitulo.ResumeLayout(False)
         Me.gbIFiltros.ResumeLayout(False)

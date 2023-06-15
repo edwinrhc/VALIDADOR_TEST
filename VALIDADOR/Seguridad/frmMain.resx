@@ -121,7 +121,7 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="ImprimirToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="SMICargaArchivosEmpleadores.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAA2VJREFUSEvN
         lWtIU2Ecxo9pkhFkmV1UVAKVUCIqyy6UpflFsawP2geLMAWjciuiLKIgIxLNovtVy1tmLnPNS2XTMrXs
@@ -141,7 +141,7 @@
         FjwNtdSxkpGANocyYx/97/zzxTA/AK3/y+wcHbPGAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="ToolStripMenuItem4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="SMIfrmCargaRealizada.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAABRpJREFUWEft
         VstPlHcU5TEgMwMIFUFBaxUHUIbHgOIDhnlgrMLAjFIfgKit+AbT2kpiWsrO0AUEo4jQv8CuatKdXdik
