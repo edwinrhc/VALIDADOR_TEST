@@ -39,6 +39,7 @@ Partial Class frmMain
         Me.tssAmbiente = New System.Windows.Forms.ToolStripStatusLabel()
         Me.tssNombreCompleto = New System.Windows.Forms.ToolStripStatusLabel()
         Me.tssVersion = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.CARGAEMPLEADORToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -91,7 +92,7 @@ Partial Class frmMain
         '
         'OBSERVACIONESToolStripMenuItem
         '
-        Me.OBSERVACIONESToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DatosPersonalesToolStripMenuItem})
+        Me.OBSERVACIONESToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DatosPersonalesToolStripMenuItem, Me.CARGAEMPLEADORToolStripMenuItem})
         Me.OBSERVACIONESToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
         Me.OBSERVACIONESToolStripMenuItem.ForeColor = System.Drawing.Color.MidnightBlue
         Me.OBSERVACIONESToolStripMenuItem.Name = "OBSERVACIONESToolStripMenuItem"
@@ -173,6 +174,12 @@ Partial Class frmMain
         Me.tssVersion.Name = "tssVersion"
         Me.tssVersion.Size = New System.Drawing.Size(16, 28)
         '
+        'CARGAEMPLEADORToolStripMenuItem
+        '
+        Me.CARGAEMPLEADORToolStripMenuItem.Name = "CARGAEMPLEADORToolStripMenuItem"
+        Me.CARGAEMPLEADORToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
+        Me.CARGAEMPLEADORToolStripMenuItem.Text = "CARGA EMPLEADOR"
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -213,4 +220,5 @@ Partial Class frmMain
     Friend WithEvents tssVersion As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents OBSERVACIONESToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DatosPersonalesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CARGAEMPLEADORToolStripMenuItem As ToolStripMenuItem
 End Class

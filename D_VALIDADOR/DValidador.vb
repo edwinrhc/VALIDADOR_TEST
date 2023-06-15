@@ -800,9 +800,12 @@ Public Class DValidador
             Return dataTable
         Catch ex As Exception
             Throw ex
+            'Finally
+            '    conexionOracle.Close()
         End Try
         Return dtResultado
     End Function
+
 #End Region
 
 #Region "RESUMEN CARGA EMPRESA"
