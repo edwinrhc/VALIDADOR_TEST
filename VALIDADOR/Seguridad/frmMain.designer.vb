@@ -29,7 +29,6 @@ Partial Class frmMain
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.SMIfrmCargaRealizada = New System.Windows.Forms.ToolStripMenuItem()
         Me.OBSERVACIONESToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TSMDatosPersonales = New System.Windows.Forms.ToolStripMenuItem()
         Me.TSMCargaEmpleador = New System.Windows.Forms.ToolStripMenuItem()
         Me.SALIRToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
@@ -92,25 +91,18 @@ Partial Class frmMain
         '
         'OBSERVACIONESToolStripMenuItem
         '
-        Me.OBSERVACIONESToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSMDatosPersonales, Me.TSMCargaEmpleador})
+        Me.OBSERVACIONESToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSMCargaEmpleador})
         Me.OBSERVACIONESToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
         Me.OBSERVACIONESToolStripMenuItem.ForeColor = System.Drawing.Color.MidnightBlue
         Me.OBSERVACIONESToolStripMenuItem.Name = "OBSERVACIONESToolStripMenuItem"
         Me.OBSERVACIONESToolStripMenuItem.Size = New System.Drawing.Size(123, 50)
         Me.OBSERVACIONESToolStripMenuItem.Text = "OBSERVACIONES"
         '
-        'TSMDatosPersonales
-        '
-        Me.TSMDatosPersonales.Image = Global.VALIDADOR.My.Resources.Resources.icons8_accede_redondeado_derecho_64
-        Me.TSMDatosPersonales.Name = "TSMDatosPersonales"
-        Me.TSMDatosPersonales.Size = New System.Drawing.Size(203, 22)
-        Me.TSMDatosPersonales.Text = "DATOS PERSONALES"
-        '
         'TSMCargaEmpleador
         '
         Me.TSMCargaEmpleador.Image = Global.VALIDADOR.My.Resources.Resources.icons8_accede_redondeado_derecho_64
         Me.TSMCargaEmpleador.Name = "TSMCargaEmpleador"
-        Me.TSMCargaEmpleador.Size = New System.Drawing.Size(203, 22)
+        Me.TSMCargaEmpleador.Size = New System.Drawing.Size(201, 22)
         Me.TSMCargaEmpleador.Text = "CARGA EMPLEADOR"
         '
         'SALIRToolStripMenuItem
@@ -221,6 +213,5 @@ Partial Class frmMain
     Friend WithEvents tssNombreCompleto As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents tssVersion As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents OBSERVACIONESToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents TSMDatosPersonales As ToolStripMenuItem
     Friend WithEvents TSMCargaEmpleador As ToolStripMenuItem
 End Class

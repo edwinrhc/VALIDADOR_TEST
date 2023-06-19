@@ -188,7 +188,7 @@ Public Class frmMain
 
     End Sub
 
-    Private Sub TSMDatosPersonales_Click(sender As Object, e As EventArgs) Handles TSMDatosPersonales.Click
+    Private Sub TSMDatosPersonales_Click(sender As Object, e As EventArgs) 
         'Dim frm As New frmObsDatosPersonales
         'frm.MdiParent = Me
         'frm.Show()

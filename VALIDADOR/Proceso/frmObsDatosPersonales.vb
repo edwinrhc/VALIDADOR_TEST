@@ -16,13 +16,13 @@ Public Class frmObsDatosPersonales
     End Sub
 
 
-    Private Sub Buscar()
+    Private Sub BuscarObsDatosPersonales()
 
         Try
             Dim Neg As New N_VALIDADOR.NConsultas
             Dim Valor As String
             Valor = txtNumCarga.Text
-            dtgDatosObsDatosPersonales.DataSource = Neg.Buscar(Valor) '
+            dtgDatosObsDatosPersonales.DataSource = Neg.BuscarObsDatosPersonales(Valor) '
             lbltotal.Text = "Total Registros: " & dtgDatosObsDatosPersonales.DataSource.Rows.Count
             Me.Formato()
         Catch ex As Exception
@@ -125,7 +125,7 @@ Public Class frmObsDatosPersonales
         End If
 
         If Len(Trim(txtNumCarga.Text)) > 0 Then
-            Buscar()
+            BuscarObsDatosPersonales()
             If dtgDatosObsDatosPersonales.RowCount = 0 Then
                 MessageBox.Show("No se encontraron registros.", "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 btnExportaCSV.Enabled = False

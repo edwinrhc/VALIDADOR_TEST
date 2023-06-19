@@ -1,4 +1,9 @@
-﻿Public Class frmObsCargaEmpleador
+﻿Imports System.ComponentModel
+Imports System.IO
+Imports System.Text
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar
+
+Public Class frmObsCargaEmpleador
 
 
     Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
@@ -6,11 +11,14 @@
         txtNumCarga.Focus()
         'Limpiar DataGriview
         dtgDatosObsCargaEmpleador.DataSource = Nothing
+        lbltotal.Text = ""
     End Sub
 
     Private Sub frmObsCargaEmpleador_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         btnExportaCSV.Enabled = False
+        BarraProgreso.Visible = False
+
 
         'Deshabilita la primera columna del DataGridView
         Dim dgvColumnCheck As New DataGridViewCheckBoxColumn
@@ -18,18 +26,91 @@
         dtgDatosObsCargaEmpleador.Columns.Add(dgvColumnCheck)
     End Sub
 
-    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
 
+
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         If txtNumCarga.Text = "" Then
             btnExportaCSV.Enabled = False
-            MessageBox.Show("Ingrese el número de carga oBS.", "Falta número de carga", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Ingrese el número de carga.", "Falta número de carga", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
 
-        Else
-            btnExportaCSV.Enabled = True
+        If Len(Trim(txtNumCarga.Text)) > 0 Then
+            ' Verificar si el BackgroundWorker está en ejecución
+            If BackgroundWorker1.IsBusy Then
+                MessageBox.Show("La búsqueda está en progreso. Espere a que se complete.", "Búsqueda en progreso", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Return
+            End If
 
+            ' Ocultar el DataGridView
+            dtgDatosObsCargaEmpleador.Visible = False
+
+            ' Mostrar el ProgressBar
+            BarraProgreso.Visible = True
+            BarraProgreso.Style = ProgressBarStyle.Marquee
+            BarraProgreso.MarqueeAnimationSpeed = 30
+
+            ' Deshabilitar el botón de búsqueda
+            btnBuscar.Enabled = False
+
+            ' Configurar el BackgroundWorker
+            BackgroundWorker1.WorkerReportsProgress = False
+            BackgroundWorker1.WorkerSupportsCancellation = True
+
+            ' Ejecutar la búsqueda en segundo plano
+            BackgroundWorker1.RunWorkerAsync()
         End If
     End Sub
 
+    Private Sub BackgroundWorker1_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker1.DoWork
+        Dim Neg As New N_VALIDADOR.NConsultas
+        Dim Valor As String = txtNumCarga.Text
+
+        ' Realizar la búsqueda y obtener los resultados
+        Dim resultados As DataTable = Neg.BuscarObsCargaEmpleador(Valor)
+
+        ' Pasar los resultados al evento RunWorkerCompleted
+        e.Result = resultados
+    End Sub
+
+    Private Sub BackgroundWorker1_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorker1.RunWorkerCompleted
+        ' Obtener los resultados de la búsqueda
+        Dim resultados As DataTable = DirectCast(e.Result, DataTable)
+
+        ' Actualizar el DataSource del DataGridView y mostrarlo
+        dtgDatosObsCargaEmpleador.DataSource = resultados
+        dtgDatosObsCargaEmpleador.Visible = True
+        lbltotal.Text = ""
+        If (dtgDatosObsCargaEmpleador.Rows.Count > 0) Then
+            btnExportaCSV.Enabled = True
+            lbltotal.Text = "Total Registros: " & dtgDatosObsCargaEmpleador.Rows.Count
+            Formato()
+            ' Mostrar el mensaje de "Búsqueda completada" y realizar otras acciones con los resultados
+            MessageBox.Show("Búsqueda completada.", "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            ' Otras acciones que desees realizar con el resultado
+        Else
+            btnExportaCSV.Enabled = False
+            MessageBox.Show("No se encontraron registros", "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+
+        ' Ocultar el ProgressBar
+        BarraProgreso.Visible = False
+
+        ' Habilitar el botón de búsqueda
+        btnBuscar.Enabled = True
+    End Sub
+
+
+    Private Sub TotalObsCargaEmpleador(ByRef dtResultado As DataTable)
+        ' Realizar operaciones de búsqueda
+        Try
+            Dim Neg As New N_VALIDADOR.NConsultas
+            Dim Valor As String
+            Valor = txtNumCarga.Text
+            dtResultado = Neg.BuscarObsCargaEmpleador(Valor)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         Me.Hide()
 
@@ -48,6 +129,179 @@
             MessageBox.Show("Solo se permiten números", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             txtNumCarga.Text = ""
             txtNumCarga.Focus()
+        End If
+    End Sub
+
+    Private Sub Formato()
+
+        dtgDatosObsCargaEmpleador.Columns(0).Visible = False
+        dtgDatosObsCargaEmpleador.Columns(1).Width = 200
+        dtgDatosObsCargaEmpleador.Columns(2).Width = 100
+        dtgDatosObsCargaEmpleador.Columns(3).Width = 200
+        dtgDatosObsCargaEmpleador.Columns(4).Width = 200
+        dtgDatosObsCargaEmpleador.Columns(5).Width = 200
+        dtgDatosObsCargaEmpleador.Columns(6).Width = 70
+        dtgDatosObsCargaEmpleador.Columns(7).Width = 50
+        dtgDatosObsCargaEmpleador.Columns(8).Width = 30
+        dtgDatosObsCargaEmpleador.Columns(9).Width = 200
+        dtgDatosObsCargaEmpleador.Columns(10).Width = 500
+        dtgDatosObsCargaEmpleador.Columns(11).Width = 400
+        dtgDatosObsCargaEmpleador.Columns(12).Width = 30
+        dtgDatosObsCargaEmpleador.Columns(13).Width = 30
+
+
+        dtgDatosObsCargaEmpleador.Columns(1).HeaderText = "Tipo Documento"
+        dtgDatosObsCargaEmpleador.Columns(2).HeaderText = "Número Documento"
+        dtgDatosObsCargaEmpleador.Columns(3).HeaderText = "Apellido Paterno"
+        dtgDatosObsCargaEmpleador.Columns(4).HeaderText = "Apellido Materno"
+        dtgDatosObsCargaEmpleador.Columns(5).HeaderText = "Nombres"
+        dtgDatosObsCargaEmpleador.Columns(6).HeaderText = "Fecha Nac."
+        dtgDatosObsCargaEmpleador.Columns(7).HeaderText = "Año"
+        dtgDatosObsCargaEmpleador.Columns(8).HeaderText = "Mes"
+        dtgDatosObsCargaEmpleador.Columns(9).HeaderText = "Tipo"
+        dtgDatosObsCargaEmpleador.Columns(10).HeaderText = "Detalle de Registro"
+        dtgDatosObsCargaEmpleador.Columns(11).HeaderText = "Descripción del Error"
+        dtgDatosObsCargaEmpleador.Columns(12).HeaderText = "Nro Carga"
+        dtgDatosObsCargaEmpleador.Columns(13).HeaderText = "RN"
+
+        Dim col1 As DataGridViewColumn = dtgDatosObsCargaEmpleador.Columns("C_CODTIT")
+        Dim col2 As DataGridViewColumn = dtgDatosObsCargaEmpleador.Columns("C_NUMDOT")
+        Dim col3 As DataGridViewColumn = dtgDatosObsCargaEmpleador.Columns("C_APEPAT")
+        Dim col4 As DataGridViewColumn = dtgDatosObsCargaEmpleador.Columns("C_APEMAT")
+        Dim col5 As DataGridViewColumn = dtgDatosObsCargaEmpleador.Columns("C_NOMBRT")
+        Dim col6 As DataGridViewColumn = dtgDatosObsCargaEmpleador.Columns("F_NACIMIENTO")
+        Dim col7 As DataGridViewColumn = dtgDatosObsCargaEmpleador.Columns("ANIO")
+        Dim col8 As DataGridViewColumn = dtgDatosObsCargaEmpleador.Columns("MES")
+        Dim col9 As DataGridViewColumn = dtgDatosObsCargaEmpleador.Columns("TIPO")
+        Dim col10 As DataGridViewColumn = dtgDatosObsCargaEmpleador.Columns("C_DETREG")
+        Dim col11 As DataGridViewColumn = dtgDatosObsCargaEmpleador.Columns("C_DETERR")
+        Dim col12 As DataGridViewColumn = dtgDatosObsCargaEmpleador.Columns("N_NUMCAR")
+        Dim col13 As DataGridViewColumn = dtgDatosObsCargaEmpleador.Columns("RN")
+        'C_CODTIT, C_NUMDOT, C_APEPAT, C_APEMAT, C_NOMBRT, F_NACIMIENTO, ANIO, MES, TIPO, C_DETREG, C_DETERR, N_NUMCAR, RN
+
+        col1.ReadOnly = True
+        col1.DefaultCellStyle.BackColor = Color.White
+        col2.ReadOnly = True
+        col2.DefaultCellStyle.BackColor = Color.White
+        col3.ReadOnly = True
+        col3.DefaultCellStyle.BackColor = Color.White
+        col4.ReadOnly = True
+        col4.DefaultCellStyle.BackColor = Color.White
+        col5.ReadOnly = True
+        col5.DefaultCellStyle.BackColor = Color.White
+        col6.ReadOnly = True
+        col6.DefaultCellStyle.BackColor = Color.White
+        col7.ReadOnly = True
+        col7.DefaultCellStyle.BackColor = Color.White
+        col8.ReadOnly = True
+        col8.DefaultCellStyle.BackColor = Color.White
+        col9.ReadOnly = True
+        col9.DefaultCellStyle.BackColor = Color.White
+        col10.ReadOnly = True
+        col10.DefaultCellStyle.BackColor = Color.White
+        col11.ReadOnly = True
+        col11.DefaultCellStyle.BackColor = Color.White
+        col12.ReadOnly = True
+        col12.DefaultCellStyle.BackColor = Color.White
+        col13.ReadOnly = True
+        col13.DefaultCellStyle.BackColor = Color.White
+
+    End Sub
+
+
+
+    Private Sub btnExportaCSV_Click(sender As Object, e As EventArgs) Handles btnExportaCSV.Click
+
+        Using saveFileDialog As New SaveFileDialog()
+            saveFileDialog.Filter = "Archivos CSV (*.csv)|*.csv" ' Filtrar por archivos CSV
+            saveFileDialog.Title = "Guardar archivo CSV"
+            saveFileDialog.RestoreDirectory = True
+
+            Dim nombreRUC As String = dtgDatosObsCargaEmpleador.Rows(1).Cells(10).Value.ToString()
+            Dim nombreRUCFormateado As String = nombreRUC.Substring(4, 13)
+            Dim nombreArchivo As String = $"Exportado_RUC_{nombreRUCFormateado}.csv"
+            saveFileDialog.FileName = nombreArchivo
+
+            If saveFileDialog.ShowDialog() = DialogResult.OK Then
+                Dim rutaArchivo As String = saveFileDialog.FileName ' Obtener la ruta del archivo seleccionada por el usuario
+                Dim numeroCarga As String = txtNumCarga.Text
+
+                ' Guardar el archivo con el nombre original
+                ExportarACSV(dtgDatosObsCargaEmpleador, rutaArchivo)
+
+            End If
+        End Using
+    End Sub
+
+    Private Sub ExportarACSV(dtgDatos As DataGridView, rutaArchivo As String)
+
+        Dim colCount As Integer = dtgDatos.Columns.Count
+
+        Dim nombreRUC As String = dtgDatos.Rows(1).Cells(10).Value.ToString()
+
+        Console.WriteLine("El valor actual ds: " + nombreRUC)
+
+        Dim nombreRUCFormateado = nombreRUC.Substring(4, 13)
+
+        Console.WriteLine("El valor actual ds: " + nombreRUCFormateado)
+
+        ' Generar el nombre del archivo CSV con el valor de la columna 5
+        Dim nombreArchivo As String = $"Exportado_RUC_{nombreRUCFormateado}.csv"
+
+        'Dim nombreArchivo As String = "DATOS Exportados.csv"
+
+        Dim rutaCompletaArchivo As String = Path.Combine(Path.GetDirectoryName(rutaArchivo), nombreArchivo)
+
+        Try
+
+            Using writer As New StreamWriter(rutaCompletaArchivo, False, Encoding.UTF8) ' Utilizar StreamWriter para escribir en el archivo
+                ' Escribir encabezados
+                For col As Integer = 0 To colCount - 1
+                    writer.Write(dtgDatos.Columns(col).HeaderText)
+                    If col < colCount - 1 Then
+                        writer.Write(";") ' Usar punto y coma como delimitador
+                    End If
+                Next
+                writer.WriteLine()
+
+                ' Escribir datos
+                For Each row As DataGridViewRow In dtgDatos.Rows
+                    If Not row.IsNewRow Then ' Evitar exportar la fila de nuevo registro
+                        For col As Integer = 0 To colCount - 1
+                            Dim cellValue As Object = row.Cells(col).Value
+                            Dim valorCelda As String = If(cellValue IsNot Nothing, cellValue.ToString(), String.Empty)
+
+                            ' Verificar si es la columna que deseas dar formato en texto
+                            ' (Aquí puedes agregar la lógica para dar formato en texto si es necesario)
+
+                            If col = 2 Then ' Aplicar formato a la columna 2 (índice de columna 1)
+                                ' Aplica aquí el formato que desees para la columna 2
+                                ' Por ejemplo, puedes agregar comillas alrededor del valor
+                                valorCelda = "'" & valorCelda.ToString()
+                            End If
+                            writer.Write(valorCelda)
+
+                            If col < colCount - 1 Then
+                                writer.Write(";") ' Usar punto y coma como delimitador
+                            End If
+                        Next
+
+                        writer.WriteLine()
+                    End If
+                Next
+            End Using
+
+            MessageBox.Show("Datos exportados correctamente.", "Exportar a CSV", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+        Catch ex As Exception
+            MessageBox.Show("El archivo está abierto. Por favor, cierre el archivo y vuelva a intentarlo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub txtNumCarga_KeyDown(sender As Object, e As KeyEventArgs) Handles txtNumCarga.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            ' Establecer el foco en el botón
+            btnBuscar.Focus()
         End If
     End Sub
 End Class

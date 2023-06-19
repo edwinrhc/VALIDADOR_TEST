@@ -118,13 +118,17 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pnlTitulo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnSalir.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAASYAAAAyCAIAAAB+luG0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAKBJREFUeF7t00ENADAIALHpIZjG6Vzcq0kt9N0skFEOUspBSjlIKQcp5SClHKSU
-        g5RykFIOUspBSjlIKQcp5SClHKSUg5RykFIOUspBSjlIKQcp5SClHKSUg5RykFIOUspBSjlIKQcp5SCl
-        HKSUg5RykFIOUspBSjlIKQcp5SClHKSUg5RykFIOUspBSjlIKQcp5SClHKSUg5RykFIOQrMfK1tqbnUQ
-        wNEAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAYpJREFUSEtjQAfl048rFE8/7EBNDDITajxuUDXnZF/fphufp++5/4EaGGQWyEyo
+        8bhB9dyTE9Zd+fD/0Iv/VMEgs0BmQo3HDUYtphTTxeL9z/5iiNHF4u4td/8vPvUaRWzDtY+0t7hl3c3/
+        4S17USzf//Tv/47Vl2ZDjccNKLW4cum9/ykTjv9fdBJh+cpzr49DjccNKLW4ZsXD/x1b3v1P6T/2f/7x
+        l2DxFWden4AajxtQw+Lu7R9QLCfZ4k03v/5ffPo10bhswXm4xRDL3/5P6jv2v3PDrZtQ43EDZItbgT5I
+        m3jqf96sS8ThmZf+N61/AbcYZnl81+FfgbXbvaFWYAfIFiMHHSUYFOzRbYdeB9fsCoJagwloZnH7wdeB
+        tTsDodZgAvSgzpx67n/RvKvE4blX/7esf4lmKRlBTY3Eldx3lPTERSqmWnYiFaMUIEilF10srlhy739S
+        71GU8pouRWZEM2Yl0baSxpUEtmpx/VU6VIsD1hDAhkctxgkGzOIB68LQp9PGwAAA3SuHhdWY0DgAAAAA
+        SUVORK5CYII=
 </value>
   </data>
   <data name="PictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -196,19 +200,6 @@
         PulYDGDRvyydMcya7sRAAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnSalir.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAAYpJREFUSEtjQAfl048rFE8/7EBNDDITajxuUDXnZF/fphufp++5/4EaGGQWyEyo
-        8bhB9dyTE9Zd+fD/0Iv/VMEgs0BmQo3HDUYtphTTxeL9z/5iiNHF4u4td/8vPvUaRWzDtY+0t7hl3c3/
-        4S17USzf//Tv/47Vl2ZDjccNKLW4cum9/ykTjv9fdBJh+cpzr49DjccNKLW4ZsXD/x1b3v1P6T/2f/7x
-        l2DxFWden4AajxtQw+Lu7R9QLCfZ4k03v/5ffPo10bhswXm4xRDL3/5P6jv2v3PDrZtQ43EDZItbgT5I
-        m3jqf96sS8ThmZf+N61/AbcYZnl81+FfgbXbvaFWYAfIFiMHHSUYFOzRbYdeB9fsCoJagwloZnH7wdeB
-        tTsDodZgAvSgzpx67n/RvKvE4blX/7esf4lmKRlBTY3Eldx3lPTERSqmWnYiFaMUIEilF10srlhy739S
-        71GU8pouRWZEM2Yl0baSxpUEtmpx/VU6VIsD1hDAhkctxgkGzOIB68LQp9PGwAAA3SuHhdWY0DgAAAAA
-        SUVORK5CYII=
-</value>
-  </data>
   <data name="PictureBox5.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAABGdBTUEAALGPC/xhBQAAAIRQTFRF////
@@ -236,4 +227,19 @@
         eNoBPSPiixHq6oDg7piD2TwxekA/UvD/QPwGertpL59vvLEAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="pnlTitulo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAASYAAAAyCAIAAAB+luG0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAKBJREFUeF7t00ENADAIALHpIZjG6Vzcq0kt9N0skFEOUspBSjlIKQcp5SClHKSU
+        g5RykFIOUspBSjlIKQcp5SClHKSUg5RykFIOUspBSjlIKQcp5SClHKSUg5RykFIOUspBSjlIKQcp5SCl
+        HKSUg5RykFIOUspBSjlIKQcp5SClHKSUg5RykFIOUspBSjlIKQcp5SClHKSUg5RykFIOQrMfK1tqbnUQ
+        wNEAAAAASUVORK5CYII=
+</value>
+  </data>
+  <metadata name="BackgroundWorker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>85</value>
+  </metadata>
 </root>

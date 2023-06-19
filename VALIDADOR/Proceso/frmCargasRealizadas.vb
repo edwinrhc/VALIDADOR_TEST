@@ -1205,10 +1205,6 @@ Public Class frmCargasRealizadas
 
     End Sub
 
-    Private Sub dtgDatosAtendidos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtgDatosAtendidos.CellContentClick
-
-    End Sub
-
     Private Sub dtgDatosAtendidos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtgDatosAtendidos.CellClick
         ' Obtener el valor de la celda de la primera columna de la fila seleccionada
         Dim valorCelda As String = dtgDatosAtendidos.SelectedRows(0).Cells(1).Value.ToString()
