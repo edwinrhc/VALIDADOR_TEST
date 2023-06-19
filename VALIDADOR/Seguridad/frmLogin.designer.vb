@@ -175,6 +175,7 @@ Partial Class frmLogin
         Me.Button1.TabIndex = 8
         Me.Button1.Text = "Conexion"
         Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.Visible = False
         '
         'Label1
         '

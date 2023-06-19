@@ -32,6 +32,12 @@ Partial Class frmObsCargaEmpleador
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.txtNumCarga = New System.Windows.Forms.TextBox()
         Me.gbDatos = New System.Windows.Forms.GroupBox()
+        Me.lblIngreseDatos = New System.Windows.Forms.Label()
+        Me.lblTipoCampo = New System.Windows.Forms.Label()
+        Me.btnBuscarTodos = New System.Windows.Forms.Button()
+        Me.ComboBoxColumnas = New System.Windows.Forms.ComboBox()
+        Me.txtCriterioBusqueda = New System.Windows.Forms.TextBox()
+        Me.btnBuscarEnDataGridView = New System.Windows.Forms.Button()
         Me.BarraProgreso = New System.Windows.Forms.ProgressBar()
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -41,9 +47,6 @@ Partial Class frmObsCargaEmpleador
         Me.pnlTitulo = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
-        Me.btnBuscarEnDataGridView = New System.Windows.Forms.Button()
-        Me.txtCriterioBusqueda = New System.Windows.Forms.TextBox()
-        Me.ComboBoxColumnas = New System.Windows.Forms.ComboBox()
         Me.gbIFiltros.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbDatos.SuspendLayout()
@@ -164,6 +167,9 @@ Partial Class frmObsCargaEmpleador
         '
         'gbDatos
         '
+        Me.gbDatos.Controls.Add(Me.lblIngreseDatos)
+        Me.gbDatos.Controls.Add(Me.lblTipoCampo)
+        Me.gbDatos.Controls.Add(Me.btnBuscarTodos)
         Me.gbDatos.Controls.Add(Me.ComboBoxColumnas)
         Me.gbDatos.Controls.Add(Me.txtCriterioBusqueda)
         Me.gbDatos.Controls.Add(Me.btnBuscarEnDataGridView)
@@ -181,6 +187,58 @@ Partial Class frmObsCargaEmpleador
         Me.gbDatos.TabIndex = 30
         Me.gbDatos.TabStop = False
         Me.gbDatos.Text = "v"
+        '
+        'lblIngreseDatos
+        '
+        Me.lblIngreseDatos.AutoSize = True
+        Me.lblIngreseDatos.Location = New System.Drawing.Point(756, 33)
+        Me.lblIngreseDatos.Name = "lblIngreseDatos"
+        Me.lblIngreseDatos.Size = New System.Drawing.Size(74, 13)
+        Me.lblIngreseDatos.TabIndex = 31
+        Me.lblIngreseDatos.Text = "Ingrese  datos"
+        '
+        'lblTipoCampo
+        '
+        Me.lblTipoCampo.AutoSize = True
+        Me.lblTipoCampo.Location = New System.Drawing.Point(507, 33)
+        Me.lblTipoCampo.Name = "lblTipoCampo"
+        Me.lblTipoCampo.Size = New System.Drawing.Size(78, 13)
+        Me.lblTipoCampo.TabIndex = 30
+        Me.lblTipoCampo.Text = "Tipo de campo"
+        '
+        'btnBuscarTodos
+        '
+        Me.btnBuscarTodos.Location = New System.Drawing.Point(1266, 17)
+        Me.btnBuscarTodos.Name = "btnBuscarTodos"
+        Me.btnBuscarTodos.Size = New System.Drawing.Size(95, 32)
+        Me.btnBuscarTodos.TabIndex = 9
+        Me.btnBuscarTodos.Text = "Mostrar Todo"
+        Me.btnBuscarTodos.UseVisualStyleBackColor = True
+        '
+        'ComboBoxColumnas
+        '
+        Me.ComboBoxColumnas.FormattingEnabled = True
+        Me.ComboBoxColumnas.Location = New System.Drawing.Point(602, 27)
+        Me.ComboBoxColumnas.Name = "ComboBoxColumnas"
+        Me.ComboBoxColumnas.Size = New System.Drawing.Size(131, 21)
+        Me.ComboBoxColumnas.TabIndex = 6
+        '
+        'txtCriterioBusqueda
+        '
+        Me.txtCriterioBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtCriterioBusqueda.Location = New System.Drawing.Point(836, 28)
+        Me.txtCriterioBusqueda.Name = "txtCriterioBusqueda"
+        Me.txtCriterioBusqueda.Size = New System.Drawing.Size(141, 20)
+        Me.txtCriterioBusqueda.TabIndex = 7
+        '
+        'btnBuscarEnDataGridView
+        '
+        Me.btnBuscarEnDataGridView.Location = New System.Drawing.Point(983, 20)
+        Me.btnBuscarEnDataGridView.Name = "btnBuscarEnDataGridView"
+        Me.btnBuscarEnDataGridView.Size = New System.Drawing.Size(77, 32)
+        Me.btnBuscarEnDataGridView.TabIndex = 8
+        Me.btnBuscarEnDataGridView.Text = "Buscar"
+        Me.btnBuscarEnDataGridView.UseVisualStyleBackColor = True
         '
         'BarraProgreso
         '
@@ -273,30 +331,6 @@ Partial Class frmObsCargaEmpleador
         'BackgroundWorker1
         '
         '
-        'btnBuscarEnDataGridView
-        '
-        Me.btnBuscarEnDataGridView.Location = New System.Drawing.Point(1266, 20)
-        Me.btnBuscarEnDataGridView.Name = "btnBuscarEnDataGridView"
-        Me.btnBuscarEnDataGridView.Size = New System.Drawing.Size(75, 23)
-        Me.btnBuscarEnDataGridView.TabIndex = 26
-        Me.btnBuscarEnDataGridView.Text = "Buscar"
-        Me.btnBuscarEnDataGridView.UseVisualStyleBackColor = True
-        '
-        'txtCriterioBusqueda
-        '
-        Me.txtCriterioBusqueda.Location = New System.Drawing.Point(1119, 23)
-        Me.txtCriterioBusqueda.Name = "txtCriterioBusqueda"
-        Me.txtCriterioBusqueda.Size = New System.Drawing.Size(141, 20)
-        Me.txtCriterioBusqueda.TabIndex = 27
-        '
-        'ComboBoxColumnas
-        '
-        Me.ComboBoxColumnas.FormattingEnabled = True
-        Me.ComboBoxColumnas.Location = New System.Drawing.Point(976, 23)
-        Me.ComboBoxColumnas.Name = "ComboBoxColumnas"
-        Me.ComboBoxColumnas.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBoxColumnas.TabIndex = 28
-        '
         'frmObsCargaEmpleador
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -343,4 +377,7 @@ Partial Class frmObsCargaEmpleador
     Friend WithEvents txtCriterioBusqueda As TextBox
     Friend WithEvents btnBuscarEnDataGridView As Button
     Friend WithEvents ComboBoxColumnas As ComboBox
+    Friend WithEvents btnBuscarTodos As Button
+    Friend WithEvents lblIngreseDatos As Label
+    Friend WithEvents lblTipoCampo As Label
 End Class
