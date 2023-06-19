@@ -41,6 +41,9 @@ Partial Class frmObsCargaEmpleador
         Me.pnlTitulo = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+        Me.btnBuscarEnDataGridView = New System.Windows.Forms.Button()
+        Me.txtCriterioBusqueda = New System.Windows.Forms.TextBox()
+        Me.ComboBoxColumnas = New System.Windows.Forms.ComboBox()
         Me.gbIFiltros.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbDatos.SuspendLayout()
@@ -161,6 +164,9 @@ Partial Class frmObsCargaEmpleador
         '
         'gbDatos
         '
+        Me.gbDatos.Controls.Add(Me.ComboBoxColumnas)
+        Me.gbDatos.Controls.Add(Me.txtCriterioBusqueda)
+        Me.gbDatos.Controls.Add(Me.btnBuscarEnDataGridView)
         Me.gbDatos.Controls.Add(Me.BarraProgreso)
         Me.gbDatos.Controls.Add(Me.lbltotal)
         Me.gbDatos.Controls.Add(Me.Label6)
@@ -179,7 +185,7 @@ Partial Class frmObsCargaEmpleador
         'BarraProgreso
         '
         Me.BarraProgreso.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.BarraProgreso.Location = New System.Drawing.Point(352, 150)
+        Me.BarraProgreso.Location = New System.Drawing.Point(352, 195)
         Me.BarraProgreso.Name = "BarraProgreso"
         Me.BarraProgreso.Size = New System.Drawing.Size(708, 32)
         Me.BarraProgreso.Style = System.Windows.Forms.ProgressBarStyle.Continuous
@@ -234,12 +240,12 @@ Partial Class frmObsCargaEmpleador
         Me.dtgDatosObsCargaEmpleador.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark
         Me.dtgDatosObsCargaEmpleador.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtgDatosObsCargaEmpleador.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.dtgDatosObsCargaEmpleador.Location = New System.Drawing.Point(22, 37)
+        Me.dtgDatosObsCargaEmpleador.Location = New System.Drawing.Point(22, 59)
         Me.dtgDatosObsCargaEmpleador.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.dtgDatosObsCargaEmpleador.Name = "dtgDatosObsCargaEmpleador"
         Me.dtgDatosObsCargaEmpleador.RowHeadersVisible = False
         Me.dtgDatosObsCargaEmpleador.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtgDatosObsCargaEmpleador.Size = New System.Drawing.Size(1339, 405)
+        Me.dtgDatosObsCargaEmpleador.Size = New System.Drawing.Size(1339, 383)
         Me.dtgDatosObsCargaEmpleador.TabIndex = 12
         '
         'pnlTitulo
@@ -266,6 +272,30 @@ Partial Class frmObsCargaEmpleador
         '
         'BackgroundWorker1
         '
+        '
+        'btnBuscarEnDataGridView
+        '
+        Me.btnBuscarEnDataGridView.Location = New System.Drawing.Point(1266, 20)
+        Me.btnBuscarEnDataGridView.Name = "btnBuscarEnDataGridView"
+        Me.btnBuscarEnDataGridView.Size = New System.Drawing.Size(75, 23)
+        Me.btnBuscarEnDataGridView.TabIndex = 26
+        Me.btnBuscarEnDataGridView.Text = "Buscar"
+        Me.btnBuscarEnDataGridView.UseVisualStyleBackColor = True
+        '
+        'txtCriterioBusqueda
+        '
+        Me.txtCriterioBusqueda.Location = New System.Drawing.Point(1119, 23)
+        Me.txtCriterioBusqueda.Name = "txtCriterioBusqueda"
+        Me.txtCriterioBusqueda.Size = New System.Drawing.Size(141, 20)
+        Me.txtCriterioBusqueda.TabIndex = 27
+        '
+        'ComboBoxColumnas
+        '
+        Me.ComboBoxColumnas.FormattingEnabled = True
+        Me.ComboBoxColumnas.Location = New System.Drawing.Point(976, 23)
+        Me.ComboBoxColumnas.Name = "ComboBoxColumnas"
+        Me.ComboBoxColumnas.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBoxColumnas.TabIndex = 28
         '
         'frmObsCargaEmpleador
         '
@@ -310,4 +340,7 @@ Partial Class frmObsCargaEmpleador
     Friend WithEvents dtgDatosObsCargaEmpleador As DataGridView
     Friend WithEvents BarraProgreso As ProgressBar
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents txtCriterioBusqueda As TextBox
+    Friend WithEvents btnBuscarEnDataGridView As Button
+    Friend WithEvents ComboBoxColumnas As ComboBox
 End Class

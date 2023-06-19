@@ -19,27 +19,6 @@ Public Class frmCargasRealizadas
     End Property
 
 
-    Private Sub frmPadron_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
-        cargarEstados()
-        btnResumenCarga.Enabled = False
-        btnVisualizacion.Enabled = False
-        btnVisualizacion.Visible = False
-
-        Dim dgvColumnCheck As New DataGridViewCheckBoxColumn
-
-        dgvColumnCheck.ReadOnly = False
-        dtgDatosAtendidos.Columns.Add(dgvColumnCheck)
-
-
-        '  ConfigurarColumnasGrillaTramitesAtendidos() '
-        txtNumCarga.Enabled = True
-
-    End Sub
-
-
-
-
     Public Function verificarExistencia(ByVal ht As Hashtable, ByVal valor As String)
 
         For Each elemento As DictionaryEntry In ht
@@ -65,10 +44,10 @@ Public Class frmCargasRealizadas
 
         If txtNumCarga.Text = "" Then
             btnResumenCarga.Enabled = False
-            btnVisualizacion.Enabled = False
+            btnObservaciones.Enabled = False
         Else
             btnResumenCarga.Enabled = True
-            btnVisualizacion.Enabled = True
+            btnObservaciones.Enabled = True
         End If
 
         If Len(Trim(txtNumCarga.Text)) > 0 Then
@@ -79,7 +58,7 @@ Public Class frmCargasRealizadas
                 MessageBox.Show("No se encontraron registros.", "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                 btnResumenCarga.Enabled = False
-                btnVisualizacion.Enabled = False
+                btnObservaciones.Enabled = False
             End If
 
         ElseIf IsNumeric(ddlEstado.SelectedValue) Then
@@ -1189,7 +1168,7 @@ Public Class frmCargasRealizadas
     Private Sub txtNumCarga_TextChanged(sender As Object, e As EventArgs) Handles txtNumCarga.TextChanged
         If txtNumCarga.Text = "" Then
             btnResumenCarga.Enabled = False
-            btnVisualizacion.Enabled = False
+            btnObservaciones.Enabled = False
 
 
         End If
@@ -1216,9 +1195,49 @@ Public Class frmCargasRealizadas
             If dtgDatosAtendidos.SelectedRows.Count > 0 Then
                 ' Habilitar el botón btnGenerartxt
                 btnResumenCarga.Enabled = True
+                btnObservaciones.Enabled = True
             End If
         End If
 
     End Sub
+
+
+
+    Private Sub frmCargasRealizadas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
+        cargarEstados()
+        btnResumenCarga.Enabled = False
+        btnObservaciones.Enabled = True
+        btnObservaciones.Visible = True
+
+        Dim dgvColumnCheck As New DataGridViewCheckBoxColumn
+
+        dgvColumnCheck.ReadOnly = False
+        dtgDatosAtendidos.Columns.Add(dgvColumnCheck)
+
+
+        '  ConfigurarColumnasGrillaTramitesAtendidos() '
+        txtNumCarga.Enabled = True
+
+    End Sub
+
+    Private _frmDestino As frmObsCargaEmpleador ' Variable para almacenar la instancia del formulario de destino
+    Private Sub btnErrores_Click(sender As Object, e As EventArgs) Handles btnObservaciones.Click
+        ' frmObsCargaEmpleador.Show()
+
+        If _frmDestino Is Nothing OrElse _frmDestino.IsDisposed Then
+            _frmDestino = New frmObsCargaEmpleador() ' Crear una nueva instancia si no existe o si se ha cerrado
+        End If
+
+        ' Obtener el valor del TextBox de origen
+        Dim valorOrigen As String = txtNumCarga.Text
+
+        ' Pasar el valor al TextBox de destino en el formulario de destino
+        _frmDestino.txtNumCarga.Text = valorOrigen
+
+        _frmDestino.Show() ' Mostrar el formulario de destino
+    End Sub
+
 
 End Class

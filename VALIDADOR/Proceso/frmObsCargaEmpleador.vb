@@ -19,7 +19,7 @@ Public Class frmObsCargaEmpleador
         btnExportaCSV.Enabled = False
         BarraProgreso.Visible = False
 
-
+        LlenarComboBoxColumnas()
         'Deshabilita la primera columna del DataGridView
         Dim dgvColumnCheck As New DataGridViewCheckBoxColumn
         dgvColumnCheck.ReadOnly = False
@@ -32,6 +32,7 @@ Public Class frmObsCargaEmpleador
         If txtNumCarga.Text = "" Then
             btnExportaCSV.Enabled = False
             MessageBox.Show("Ingrese el número de carga.", "Falta número de carga", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            dtgDatosObsCargaEmpleador.DataSource = Nothing
         End If
 
         If Len(Trim(txtNumCarga.Text)) > 0 Then
@@ -89,7 +90,8 @@ Public Class frmObsCargaEmpleador
             ' Otras acciones que desees realizar con el resultado
         Else
             btnExportaCSV.Enabled = False
-            MessageBox.Show("No se encontraron registros", "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("No se encontraron registros", "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            dtgDatosObsCargaEmpleador.DataSource = Nothing
         End If
 
         ' Ocultar el ProgressBar
@@ -302,6 +304,95 @@ Public Class frmObsCargaEmpleador
         If e.KeyCode = Keys.Enter Then
             ' Establecer el foco en el botón
             btnBuscar.Focus()
+        End If
+    End Sub
+
+
+    Private Sub LlenarComboBoxColumnas()
+        ' Limpiar el ComboBox
+        ComboBoxColumnas.Items.Clear()
+
+        ' Agregar las columnas deseadas al ComboBox
+        ComboBoxColumnas.Items.Add("Número Documento")
+        ComboBoxColumnas.Items.Add("Apellido Paterno")
+        ComboBoxColumnas.Items.Add("Apellido Materno")
+        ComboBoxColumnas.Items.Add("Nombre Completo")
+    End Sub
+
+
+
+    Private Function GetColumnNameByIndex(index As Integer) As String
+        Dim dt As DataTable = DirectCast(dtgDatosObsCargaEmpleador.DataSource, DataTable)
+        If dt IsNot Nothing AndAlso index >= 0 AndAlso index < dt.Columns.Count Then
+            Dim columnName As String = ComboBoxColumnas.Items(index).ToString()
+
+            ' Realiza la traducción del nombre de columna según corresponda
+            Select Case columnName
+                Case "Número Documento"
+                    Return "C_NUMDOT"
+                Case "Apellido Paterno"
+                    Return "C_APEPAT"
+                Case "Apellido Materno"
+                    Return "C_APEMAT"
+                Case "Nombre Completo"
+                    Return "C_NOMBRT"
+                    ' Agrega más casos según corresponda para otras columnas
+                    '...
+                Case Else
+                    Return ""
+            End Select
+        End If
+        Return ""
+    End Function
+
+    Private Sub btnBuscarEnDataGridView_Click(sender As Object, e As EventArgs) Handles btnBuscarEnDataGridView.Click
+        Dim criterio As String = txtCriterioBusqueda.Text.Trim()
+
+        If Not String.IsNullOrEmpty(criterio) Then
+            ' Obtener la columna seleccionada en el ComboBox
+            Dim columnaSeleccionada As String = GetColumnNameByIndex(ComboBoxColumnas.SelectedIndex)
+
+            ' Filtrar los datos en función del criterio de búsqueda y la columna seleccionada
+            FiltrarDataGridView(criterio, columnaSeleccionada)
+
+            ' Verificar si se encontraron resultados
+            If dtgDatosObsCargaEmpleador.Rows.Count > 0 Then
+                ' Se encontraron resultados
+                MessageBox.Show("Se encontraron coincidencias: " & dtgDatosObsCargaEmpleador.Rows.Count, "Búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                lbltotal.Text = "Total Registros: " & dtgDatosObsCargaEmpleador.Rows.Count
+            Else
+                ' No se encontraron resultados
+                MessageBox.Show("No se encontraron coincidencias.", "Búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                txtCriterioBusqueda.Text = ""
+                ' Restaurar el DataView original sin filtro
+                Dim dt As DataTable = DirectCast(dtgDatosObsCargaEmpleador.DataSource, DataTable)
+                dt.DefaultView.RowFilter = String.Empty
+
+                lbltotal.Text = "Total Registros: " & dtgDatosObsCargaEmpleador.Rows.Count
+            End If
+        Else
+            ' Restaurar el DataView original sin filtro
+            Dim dt As DataTable = DirectCast(dtgDatosObsCargaEmpleador.DataSource, DataTable)
+            dt.DefaultView.RowFilter = String.Empty
+            lbltotal.Text = "Total Registros: " & dtgDatosObsCargaEmpleador.Rows.Count
+        End If
+    End Sub
+
+
+    Private Sub FiltrarDataGridView(criterio As String, columna As String)
+        Dim dt As DataTable = DirectCast(dtgDatosObsCargaEmpleador.DataSource, DataTable)
+
+        If dt IsNot Nothing Then
+            dt.DefaultView.RowFilter = $"{columna} LIKE '%{criterio}%'"
+        End If
+    End Sub
+
+
+    Private Sub txtCriterioBusqueda_KeyDown(sender As Object, e As KeyEventArgs) Handles txtCriterioBusqueda.KeyDown
+
+        If e.KeyCode = Keys.Enter Then
+            ' Establecer el foco en el botón
+            btnBuscarEnDataGridView.Focus()
         End If
     End Sub
 End Class

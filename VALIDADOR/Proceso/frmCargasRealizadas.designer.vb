@@ -42,7 +42,7 @@ Partial Class frmCargasRealizadas
         Me.dtgDatosAtendidos = New System.Windows.Forms.DataGridView()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.btnResumenCarga = New System.Windows.Forms.Button()
-        Me.btnVisualizacion = New System.Windows.Forms.Button()
+        Me.btnObservaciones = New System.Windows.Forms.Button()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.gbDatos = New System.Windows.Forms.GroupBox()
@@ -275,20 +275,20 @@ Partial Class frmCargasRealizadas
         Me.btnResumenCarga.Text = "      Resumen Carga"
         Me.btnResumenCarga.UseVisualStyleBackColor = False
         '
-        'btnVisualizacion
+        'btnObservaciones
         '
-        Me.btnVisualizacion.BackColor = System.Drawing.SystemColors.Control
-        Me.btnVisualizacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnVisualizacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnVisualizacion.Image = CType(resources.GetObject("btnVisualizacion.Image"), System.Drawing.Image)
-        Me.btnVisualizacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnVisualizacion.Location = New System.Drawing.Point(1087, 88)
-        Me.btnVisualizacion.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.btnVisualizacion.Name = "btnVisualizacion"
-        Me.btnVisualizacion.Size = New System.Drawing.Size(157, 39)
-        Me.btnVisualizacion.TabIndex = 14
-        Me.btnVisualizacion.Text = "      Errores de Carga"
-        Me.btnVisualizacion.UseVisualStyleBackColor = False
+        Me.btnObservaciones.BackColor = System.Drawing.SystemColors.Control
+        Me.btnObservaciones.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnObservaciones.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnObservaciones.Image = CType(resources.GetObject("btnObservaciones.Image"), System.Drawing.Image)
+        Me.btnObservaciones.ImageAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.btnObservaciones.Location = New System.Drawing.Point(1087, 88)
+        Me.btnObservaciones.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.btnObservaciones.Name = "btnObservaciones"
+        Me.btnObservaciones.Size = New System.Drawing.Size(157, 39)
+        Me.btnObservaciones.TabIndex = 14
+        Me.btnObservaciones.Text = "      Obs de Carga"
+        Me.btnObservaciones.UseVisualStyleBackColor = False
         '
         'PictureBox5
         '
@@ -316,7 +316,7 @@ Partial Class frmCargasRealizadas
         Me.gbDatos.Controls.Add(Me.lbltotal)
         Me.gbDatos.Controls.Add(Me.Label6)
         Me.gbDatos.Controls.Add(Me.PictureBox5)
-        Me.gbDatos.Controls.Add(Me.btnVisualizacion)
+        Me.gbDatos.Controls.Add(Me.btnObservaciones)
         Me.gbDatos.Controls.Add(Me.btnResumenCarga)
         Me.gbDatos.Controls.Add(Me.PictureBox3)
         Me.gbDatos.Controls.Add(Me.dtgDatosAtendidos)
@@ -398,7 +398,7 @@ Partial Class frmCargasRealizadas
     Friend WithEvents dtgDatosAtendidos As System.Windows.Forms.DataGridView
     Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
     Friend WithEvents btnResumenCarga As System.Windows.Forms.Button
-    Friend WithEvents btnVisualizacion As System.Windows.Forms.Button
+    Friend WithEvents btnObservaciones As System.Windows.Forms.Button
     Friend WithEvents PictureBox5 As System.Windows.Forms.PictureBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents gbDatos As System.Windows.Forms.GroupBox

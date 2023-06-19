@@ -196,6 +196,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proceso\frmCargasRealizadas.resx">
       <DependentUpon>frmCargasRealizadas.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Proceso\frmObsCargaEmpleador.resx">
       <DependentUpon>frmObsCargaEmpleador.vb</DependentUpon>
