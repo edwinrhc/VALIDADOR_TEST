@@ -314,7 +314,8 @@ Public Class frmObsCargaEmpleador
                             If col = 2 Then ' Aplicar formato a la columna 2 (índice de columna 1)
                                 ' Aplica aquí el formato que desees para la columna 2
                                 ' Por ejemplo, puedes agregar comillas alrededor del valor
-                                valorCelda = "'" & valorCelda.ToString()
+                                '  valorCelda = "'" & valorCelda.ToString()
+                                valorCelda = valorCelda.ToString()
                             End If
                             writer.Write(valorCelda)
 
@@ -464,5 +465,7 @@ Public Class frmObsCargaEmpleador
         lbltotal.Text = "Total Registros: " & dtgDatosObsCargaEmpleador.Rows.Count
     End Sub
 
+    Private Sub gbDatos_Enter(sender As Object, e As EventArgs) Handles gbDatos.Enter
 
+    End Sub
 End Class

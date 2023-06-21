@@ -243,9 +243,9 @@ Partial Class frmObsCargaEmpleador
         'BarraProgreso
         '
         Me.BarraProgreso.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.BarraProgreso.Location = New System.Drawing.Point(352, 195)
+        Me.BarraProgreso.Location = New System.Drawing.Point(278, 195)
         Me.BarraProgreso.Name = "BarraProgreso"
-        Me.BarraProgreso.Size = New System.Drawing.Size(708, 32)
+        Me.BarraProgreso.Size = New System.Drawing.Size(790, 32)
         Me.BarraProgreso.Style = System.Windows.Forms.ProgressBarStyle.Continuous
         Me.BarraProgreso.TabIndex = 25
         '
