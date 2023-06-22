@@ -10,12 +10,72 @@ Public Class DConsultas
 
 #Region "Reporte"
 
+    'Public Function EjecutarProcedimientoAlmacenadoYConsulta(Obj As Validador) As DataTable
+    '    Try
+    '        Dim miConexion As New Conexion()
+    '        Dim conexionOracle As OracleConnection = miConexion.conn
+
+    '        ' Ejecutar el procedimiento almacenado
+    '        Dim procedimiento As String = "VALIDADOR_TEST.SP_TRAB_CASUISTICA"
+    '        Dim comandoProcedimiento As New OracleCommand(procedimiento, conexionOracle)
+    '        comandoProcedimiento.CommandType = CommandType.StoredProcedure
+    '        comandoProcedimiento.Parameters.Add("pi_grupo", OracleDbType.Int32).Value = Obj.Po_Num_NUMCAR
+
+    '        comandoProcedimiento.ExecuteNonQuery()
+
+    '        ' Obtener el valor de numCar necesario para la consulta
+    '        Dim numCar As Long = Obj.Po_Num_NUMCAR
+
+    '        ' Realizar la consulta con el método ObsDatosPersonales
+    '        Dim datosPersonales As DataTable = ObsDatosPersonales(numCar)
+
+    '        ' Hacer uso de los datos obtenidos
+    '        ' ...
+    '        ' Aquí puedes realizar las operaciones necesarias con la DataTable 'datosPersonales'
+
+    '    Catch ex As OracleException
+    '        Throw New Exception("Error al ejecutar el procedimiento almacenado y realizar la consulta: " + ex.Message)
+    '    End Try
+    'End Function
+
+
+
+
+    'Public Function ObsDatosPersonales(Valor As Long) As DataTable
+    '    Dim dtResultado As New DataTable()
+    '    Try
+    '        Dim miConexion As New Conexion()
+    '        Dim conexionOracle As OracleConnection = miConexion.conn
+    '        Dim sql As String = "SELECT * FROM VALIDADOR_TEST.TRAB_OBSERVADOS_CASUISTICA  WHERE  NROCARGA  = :numCar"
+    '        Dim comando As New OracleCommand(sql, conexionOracle)
+    '        comando.Parameters.Add("numCar", OracleDbType.Int64).Value = Valor
+
+    '        Dim adaptador As New OracleDataAdapter(comando)
+    '        adaptador.Fill(dtResultado)
+    '    Catch ex As OracleException
+    '        Throw New Exception("Error al buscar el registro: " + ex.Message)
+    '    End Try
+    '    Return dtResultado
+    'End Function
+
     Public Function ObsDatosPersonales(Valor As Long) As DataTable
         Dim dtResultado As New DataTable()
+        Dim miConexion As New Conexion()
+        Dim conexionOracle As OracleConnection = miConexion.conn
         Try
-            Dim miConexion As New Conexion()
-            Dim conexionOracle As OracleConnection = miConexion.conn
-            Dim sql As String = "SELECT * FROM VALIDADOR_TEST.TRAB_OBSERVADOS_CASUISTICA  WHERE  NROCARGA  = :numCar"
+
+            ' Abrir la conexión a la base de datos
+            conexionOracle.Open()
+
+            ' Ejecutar el procedimiento almacenado
+            Dim procedimiento As String = "VALIDADOR_TEST.SP_TRAB_CASUISTICA"
+            Dim comandoProcedimiento As New OracleCommand(procedimiento, conexionOracle)
+            comandoProcedimiento.CommandType = CommandType.StoredProcedure
+            comandoProcedimiento.Parameters.Add("pi_grupo", OracleDbType.Int32).Value = Valor
+
+            comandoProcedimiento.ExecuteNonQuery()
+
+            Dim sql As String = "SELECT NROCARGA, CASUISTICA, TIPDOC, NRODOC, APEPATERNO, APEMATERNO, NOMBRES, FECNAC, TIPDOCRENIEC, NRODOCRENIEC, APEPATERNORENIEC, APEMATERNORENIEC, NOMBRESRENIEC, FECNACRENIEC FROM VALIDADOR_TEST.TRAB_OBSERVADOS_CASUISTICA WHERE NROCARGA = :numCar"
             Dim comando As New OracleCommand(sql, conexionOracle)
             comando.Parameters.Add("numCar", OracleDbType.Int64).Value = Valor
 
@@ -23,9 +83,13 @@ Public Class DConsultas
             adaptador.Fill(dtResultado)
         Catch ex As OracleException
             Throw New Exception("Error al buscar el registro: " + ex.Message)
+        Finally
+            ' Cerrar la conexión a la base de datos
+            conexionOracle.Close()
         End Try
         Return dtResultado
     End Function
+
 
 
 #End Region

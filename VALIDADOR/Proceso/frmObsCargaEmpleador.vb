@@ -95,7 +95,7 @@ Public Class frmObsCargaEmpleador
         ' Realizar la búsqueda y obtener los resultados
         Dim resultados As DataTable = Neg.BuscarObsCargaEmpleador(Valor)
 
-        ' Pasar los resultados al evento RunWorkerCompleted
+        '' Pasar los resultados al evento RunWorkerCompleted
         e.Result = resultados
     End Sub
 
@@ -137,17 +137,6 @@ Public Class frmObsCargaEmpleador
     End Sub
 
 
-    Private Sub TotalObsCargaEmpleador(ByRef dtResultado As DataTable)
-        ' Realizar operaciones de búsqueda
-        Try
-            Dim Neg As New N_VALIDADOR.NConsultas
-            Dim Valor As String
-            Valor = txtNumCarga.Text
-            dtResultado = Neg.BuscarObsCargaEmpleador(Valor)
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         Me.Hide()
 
@@ -452,7 +441,13 @@ Public Class frmObsCargaEmpleador
         End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnBuscarTodos.Click
+
+
+    Private Sub gbDatos_Enter(sender As Object, e As EventArgs) Handles gbDatos.Enter
+
+    End Sub
+
+    Private Sub btnBuscarTodos_Click(sender As Object, e As EventArgs) Handles btnBuscarTodos.Click
         ' Restaurar el DataView original sin filtro
         Dim dt As DataTable = DirectCast(dtgDatosObsCargaEmpleador.DataSource, DataTable)
         dt.DefaultView.RowFilter = String.Empty
@@ -465,7 +460,5 @@ Public Class frmObsCargaEmpleador
         lbltotal.Text = "Total Registros: " & dtgDatosObsCargaEmpleador.Rows.Count
     End Sub
 
-    Private Sub gbDatos_Enter(sender As Object, e As EventArgs) Handles gbDatos.Enter
 
-    End Sub
 End Class

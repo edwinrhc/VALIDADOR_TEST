@@ -30,6 +30,7 @@ Partial Class frmMain
         Me.SMIfrmCargaRealizada = New System.Windows.Forms.ToolStripMenuItem()
         Me.OBSERVACIONESToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TSMCargaEmpleador = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RENIECDATOSPERSONALESToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SALIRToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.tssFecha = New System.Windows.Forms.ToolStripStatusLabel()
@@ -91,7 +92,7 @@ Partial Class frmMain
         '
         'OBSERVACIONESToolStripMenuItem
         '
-        Me.OBSERVACIONESToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSMCargaEmpleador})
+        Me.OBSERVACIONESToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSMCargaEmpleador, Me.RENIECDATOSPERSONALESToolStripMenuItem})
         Me.OBSERVACIONESToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
         Me.OBSERVACIONESToolStripMenuItem.ForeColor = System.Drawing.Color.MidnightBlue
         Me.OBSERVACIONESToolStripMenuItem.Name = "OBSERVACIONESToolStripMenuItem"
@@ -102,8 +103,14 @@ Partial Class frmMain
         '
         Me.TSMCargaEmpleador.Image = Global.VALIDADOR.My.Resources.Resources.icons8_accede_redondeado_derecho_64
         Me.TSMCargaEmpleador.Name = "TSMCargaEmpleador"
-        Me.TSMCargaEmpleador.Size = New System.Drawing.Size(201, 22)
+        Me.TSMCargaEmpleador.Size = New System.Drawing.Size(203, 22)
         Me.TSMCargaEmpleador.Text = "CARGA EMPLEADOR"
+        '
+        'RENIECDATOSPERSONALESToolStripMenuItem
+        '
+        Me.RENIECDATOSPERSONALESToolStripMenuItem.Name = "RENIECDATOSPERSONALESToolStripMenuItem"
+        Me.RENIECDATOSPERSONALESToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
+        Me.RENIECDATOSPERSONALESToolStripMenuItem.Text = "DATOS PERSONALES"
         '
         'SALIRToolStripMenuItem
         '
@@ -214,4 +221,5 @@ Partial Class frmMain
     Friend WithEvents tssVersion As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents OBSERVACIONESToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TSMCargaEmpleador As ToolStripMenuItem
+    Friend WithEvents RENIECDATOSPERSONALESToolStripMenuItem As ToolStripMenuItem
 End Class

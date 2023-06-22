@@ -193,14 +193,27 @@ Public Class frmMain
         'frm.MdiParent = Me
         'frm.Show()
 
-        Dim frm As frmObsDatosPersonales = Application.OpenForms.OfType(Of frmObsDatosPersonales).FirstOrDefault()
+        Dim frm As frmObsReniecDatosPersonales = Application.OpenForms.OfType(Of frmObsReniecDatosPersonales).FirstOrDefault()
 
         If frm IsNot Nothing Then
             frm.Focus()
         Else
-            frm = New frmObsDatosPersonales()
+            frm = New frmObsReniecDatosPersonales()
             frm.MdiParent = Me
             frm.Show()
         End If
+    End Sub
+
+    Private Sub RENIECDATOSPERSONALESToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RENIECDATOSPERSONALESToolStripMenuItem.Click
+
+        Dim frm As frmObsReniecDatosPersonales = Application.OpenForms.OfType(Of frmObsReniecDatosPersonales).FirstOrDefault()
+        If frm IsNot Nothing Then
+            frm.Focus()
+        Else
+            frm = New frmObsReniecDatosPersonales()
+            frm.MdiParent = Me
+            frm.Show()
+        End If
+
     End Sub
 End Class

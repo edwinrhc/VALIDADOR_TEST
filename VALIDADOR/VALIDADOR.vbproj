@@ -158,10 +158,10 @@
     <Compile Include="Proceso\frmObsCargaEmpleador.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Proceso\frmObsDatosPersonales.Designer.vb">
-      <DependentUpon>frmObsDatosPersonales.vb</DependentUpon>
+    <Compile Include="Proceso\frmObsReniecDatosPersonales.Designer.vb">
+      <DependentUpon>frmObsReniecDatosPersonales.vb</DependentUpon>
     </Compile>
-    <Compile Include="Proceso\frmObsDatosPersonales.vb">
+    <Compile Include="Proceso\frmObsReniecDatosPersonales.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Proceso\VerTrabajador.Designer.vb">
@@ -201,8 +201,8 @@
     <EmbeddedResource Include="Proceso\frmObsCargaEmpleador.resx">
       <DependentUpon>frmObsCargaEmpleador.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Proceso\frmObsDatosPersonales.resx">
-      <DependentUpon>frmObsDatosPersonales.vb</DependentUpon>
+    <EmbeddedResource Include="Proceso\frmObsReniecDatosPersonales.resx">
+      <DependentUpon>frmObsReniecDatosPersonales.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proceso\VerTrabajador.resx">
       <DependentUpon>VerTrabajador.vb</DependentUpon>
