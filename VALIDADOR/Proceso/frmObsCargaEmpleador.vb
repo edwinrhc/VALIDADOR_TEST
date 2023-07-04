@@ -303,8 +303,8 @@ Public Class frmObsCargaEmpleador
                             If col = 2 Then ' Aplicar formato a la columna 2 (índice de columna 1)
                                 ' Aplica aquí el formato que desees para la columna 2
                                 ' Por ejemplo, puedes agregar comillas alrededor del valor
-                                '  valorCelda = "'" & valorCelda.ToString()
-                                valorCelda = valorCelda.ToString()
+                                valorCelda = " " & valorCelda.ToString()
+                                'valorCelda = valorCelda.ToString()
                             End If
                             writer.Write(valorCelda)
 
