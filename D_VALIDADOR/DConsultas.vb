@@ -94,7 +94,7 @@ Public Class DConsultas
 
 #End Region
 
-#Region "Observación de Carga Empleador"
+#Region "Observación de Carga Empleador."
 
     Public Function ObsCargaEmpleador(Valor As Long) As DataTable
         Dim dtResultado As New DataTable()
