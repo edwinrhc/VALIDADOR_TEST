@@ -215,33 +215,45 @@ Public Class frmObsReniecDatosPersonales
         Dim rowCount As Integer = dtgDatos.RowCount
         Dim colCount As Integer = dtgDatos.ColumnCount
 
-        Using writer As New StreamWriter(rutaArchivo, False, Encoding.UTF8) ' Utilizar StreamWriter para escribir en el archivo
-            ' Escribir encabezados
-            For col As Integer = 0 To colCount - 1
-                writer.Write(dtgDatos.Columns(col).HeaderText)
-                If col < colCount - 1 Then
-                    writer.Write(";") ' Usar punto y coma como delimitador
-                End If
-            Next
-            writer.WriteLine()
-
-            ' Escribir datos
-            For row As Integer = 0 To rowCount - 1
+        Try
+            Using writer As New StreamWriter(rutaArchivo, False, Encoding.UTF8) ' Utilizar StreamWriter para escribir en el archivo
+                ' Escribir encabezados
                 For col As Integer = 0 To colCount - 1
-                    writer.Write(dtgDatos.Rows(row).Cells(col).Value)
+                    writer.Write(dtgDatos.Columns(col).HeaderText)
                     If col < colCount - 1 Then
                         writer.Write(";") ' Usar punto y coma como delimitador
                     End If
                 Next
                 writer.WriteLine()
 
+                ' Obtener el índice de la última columna
+                Dim lastColumnIndex As Integer = dtgDatos.Columns.Count - 1
 
+                ' Obtener el índice de la columna que deseas formatear
+                Dim columnIndex As Integer = 14 ' Reemplaza 1 por el índice de la columna deseada
 
-            Next
-        End Using
+                ' Escribir datos
+                For row As Integer = 0 To rowCount - 1
+                    For col As Integer = 0 To lastColumnIndex
+                        If col = columnIndex AndAlso TypeOf dtgDatos.Rows(row).Cells(col).Value Is Date Then
+                            writer.Write(DirectCast(dtgDatos.Rows(row).Cells(col).Value, Date).ToString("dd/MM/yyyy"))
+                        Else
+                            writer.Write(dtgDatos.Rows(row).Cells(col).Value)
+                        End If
+                        If col < lastColumnIndex Then
+                            writer.Write(";") ' Usar punto y coma como delimitador
+                        End If
+                    Next
+                    writer.WriteLine()
+                Next
+            End Using
 
-        MessageBox.Show("Datos exportados correctamente.", "Exportar a CSV", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Datos exportados correctamente.", "Exportar a CSV", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Catch ex As IOException
+            MessageBox.Show("El archivo está abierto. Cierre el archivo y vuelva a intentarlo.", "Error al exportar a CSV", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
+
 
     Private Sub btnExportaCSV_Click(sender As Object, e As EventArgs) Handles btnExportaCSV.Click
         ' Obtén los datos que deseas exportar a Excel (por ejemplo, un DataTable)
@@ -419,6 +431,10 @@ Public Class frmObsReniecDatosPersonales
     Private Sub dtgDatosObsDatosPersonales_CellPainting(sender As Object, e As DataGridViewCellPaintingEventArgs) Handles dtgDatosObsDatosPersonales.CellPainting
         ' Verificar si se está pintando la primera fila (encabezados)
         ' Verificar si se está pintando la primera fila (encabezados)
+
+    End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
 
     End Sub
 End Class
