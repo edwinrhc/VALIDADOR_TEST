@@ -32,10 +32,11 @@ Partial Class frmObsReniecDatosPersonales
         Me.btnExportaCSV = New System.Windows.Forms.Button()
         Me.txtNumCarga = New System.Windows.Forms.TextBox()
         Me.gbDatos = New System.Windows.Forms.GroupBox()
-        Me.Label7 = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.lblIngreseDatos = New System.Windows.Forms.Label()
         Me.lblTipoCampo = New System.Windows.Forms.Label()
         Me.btnBuscarTodos = New System.Windows.Forms.Button()
@@ -51,9 +52,11 @@ Partial Class frmObsReniecDatosPersonales
         Me.pnlTitulo = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.gbIFiltros.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbDatos.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dtgDatosObsDatosPersonales, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -171,10 +174,7 @@ Partial Class frmObsReniecDatosPersonales
         '
         'gbDatos
         '
-        Me.gbDatos.Controls.Add(Me.Label7)
-        Me.gbDatos.Controls.Add(Me.Label5)
-        Me.gbDatos.Controls.Add(Me.Label4)
-        Me.gbDatos.Controls.Add(Me.Label2)
+        Me.gbDatos.Controls.Add(Me.GroupBox1)
         Me.gbDatos.Controls.Add(Me.lblIngreseDatos)
         Me.gbDatos.Controls.Add(Me.lblTipoCampo)
         Me.gbDatos.Controls.Add(Me.btnBuscarTodos)
@@ -196,51 +196,65 @@ Partial Class frmObsReniecDatosPersonales
         Me.gbDatos.TabStop = False
         Me.gbDatos.Text = "v"
         '
-        'Label7
+        'GroupBox1
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label7.Location = New System.Drawing.Point(30, 578)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(607, 16)
-        Me.Label7.TabIndex = 41
-        Me.Label7.Text = "Casuística 4: Tipo Documento y/o Número Documento diferentes - Nombres y/o Apelli" &
-    "dos parecidos."
+        Me.GroupBox1.Controls.Add(Me.Label8)
+        Me.GroupBox1.Controls.Add(Me.Label5)
+        Me.GroupBox1.Controls.Add(Me.Label7)
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.Label4)
+        Me.GroupBox1.Location = New System.Drawing.Point(22, 454)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(718, 149)
+        Me.GroupBox1.TabIndex = 42
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Leyenda"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(30, 554)
+        Me.Label5.Location = New System.Drawing.Point(63, 57)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(506, 16)
+        Me.Label5.Size = New System.Drawing.Size(460, 15)
         Me.Label5.TabIndex = 40
         Me.Label5.Text = "Casuística 3: Nombres y Apellidos Iguales, Tipo y/o Número Documentos diferentes"
         '
-        'Label4
+        'Label7
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(30, 532)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(571, 16)
-        Me.Label4.TabIndex = 39
-        Me.Label4.Text = "Casuística 2:  Número Documento iguales - Tipo Documento, Nombres y/o Apellidos d" &
-    "iferentes"
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label7.Location = New System.Drawing.Point(63, 81)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(552, 15)
+        Me.Label7.TabIndex = 41
+        Me.Label7.Text = "Casuística 4: Tipo Documento y/o Número Documento diferentes - Nombres y/o Apelli" &
+    "dos parecidos."
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(30, 508)
+        Me.Label2.Location = New System.Drawing.Point(63, 11)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(575, 16)
+        Me.Label2.Size = New System.Drawing.Size(531, 15)
         Me.Label2.TabIndex = 38
-        Me.Label2.Text = "Casuística 1: Tipo Documento y Número Documentos iguale - Nombres y/o Apellidos d" &
+        Me.Label2.Text = "Casuística 1: Tipo Documento y Número Documentos iguales - Nombres y/o Apellidos " &
+    "diferentes"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label4.Location = New System.Drawing.Point(63, 35)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(523, 15)
+        Me.Label4.TabIndex = 39
+        Me.Label4.Text = "Casuística 2:  Número Documento iguales - Tipo Documento, Nombres y/o Apellidos d" &
     "iferentes"
         '
         'lblIngreseDatos
@@ -358,7 +372,7 @@ Partial Class frmObsReniecDatosPersonales
         Me.dtgDatosObsDatosPersonales.Name = "dtgDatosObsDatosPersonales"
         Me.dtgDatosObsDatosPersonales.RowHeadersVisible = False
         Me.dtgDatosObsDatosPersonales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtgDatosObsDatosPersonales.Size = New System.Drawing.Size(1707, 422)
+        Me.dtgDatosObsDatosPersonales.Size = New System.Drawing.Size(1707, 379)
         Me.dtgDatosObsDatosPersonales.TabIndex = 12
         '
         'pnlTitulo
@@ -386,6 +400,17 @@ Partial Class frmObsReniecDatosPersonales
         'BackgroundWorker1
         '
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label8.Location = New System.Drawing.Point(63, 105)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(430, 30)
+        Me.Label8.TabIndex = 42
+        Me.Label8.Text = "Causística 5: Datos Distintos (apellido paterno, materno y nombres parecidos)" & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(10)
+        '
         'frmObsReniecDatosPersonales
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -402,6 +427,8 @@ Partial Class frmObsReniecDatosPersonales
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbDatos.ResumeLayout(False)
         Me.gbDatos.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dtgDatosObsDatosPersonales, System.ComponentModel.ISupportInitialize).EndInit()
@@ -439,4 +466,6 @@ Partial Class frmObsReniecDatosPersonales
     Friend WithEvents Label7 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents Label8 As Label
 End Class
