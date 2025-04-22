@@ -62,31 +62,18 @@ Public Class Conexion
         End Set
     End Property
 
-    'Declaramos el constructor de la clase
+    'Declaramos el constructor de la clase 
     Public Sub New()
 
 
+        'ENTORNO 
+
+        Me.Base = ""
+        Me.Servidor = ""
+        Me.Usuario = ""
+        Me.Clave = ""
 
 
-        'ENTORNO DESARROLLO
-
-        'Me.Base = "sifodesa"
-        'Me.Servidor = "10.0.13.218:1526"
-        'Me.Usuario = "validador_test"
-        'Me.Clave = "VALIDADOR_TEST"
-
-
-        'ENTORNO QA
-        Me.Base = "sifoqa"
-        Me.Servidor = "10.0.13.218:1527"
-        Me.Usuario = "validador_test"
-        Me.Clave = "validador_test2023"
-
-        'ENTORNO PRODUCCIÓN 'GIANELA
-        'Me.Base = "sifonavi"
-        'Me.Servidor = "10.0.13.215:1525"
-        'Me.Usuario = "VALIDADOR_EMP"
-        'Me.Clave = "V4L1D4D0R"
 
 
         Me.conn = New OracleConnection(CrearCadena)
