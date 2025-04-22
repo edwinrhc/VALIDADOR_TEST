@@ -4,6 +4,18 @@
 
 Este proyecto está diseñado para procesar archivos, realizar consultas y generar archivos PDF y de log, mostrando los resultados finales al usuario. Implementa una arquitectura por capas que incluye módulos para validación, procesamiento y manejo de información.
 
+# 🧾 Sistema de Carga Masiva (Migración Oracle Forms → VB.NET)
+
+Este proyecto fue desarrollado para migrar un sistema antiguo construido con Oracle Forms 6 a una solución moderna de escritorio con Visual Basic. El objetivo fue optimizar el proceso de carga de archivos masivos con más de 20,000 registros, reduciendo el tiempo de espera de 25 minutos aproximadamente a solo 2 minutos.
+
+
+## Características principales
+- Lectura de archivos TXT (encabezado, cuerpo y errores)
+- Carga a base de datos Oracle
+- Generación de código de proceso
+- Reporte detallado y log de errores
+- Optimización de tiempos y uso de memoria
+
 ## Características principales
 
 - Carga y procesamiento de archivos.
