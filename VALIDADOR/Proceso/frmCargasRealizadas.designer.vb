@@ -121,7 +121,7 @@ Partial Class frmCargasRealizadas
         Me.btnVerTodos.Name = "btnVerTodos"
         Me.btnVerTodos.Size = New System.Drawing.Size(190, 41)
         Me.btnVerTodos.TabIndex = 8
-        Me.btnVerTodos.Text = "Listar los 50 Últimos"
+        Me.btnVerTodos.Text = "Listar los 500 Últimos"
         Me.btnVerTodos.UseVisualStyleBackColor = False
         '
         'Label3

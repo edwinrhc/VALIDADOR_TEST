@@ -349,6 +349,12 @@ Public Class frmCargarArchivos
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
 
         frmCargasRealizadas.Show()
+        ' Pasar el valor de txtNumeroCargaGenerado al TextBox txtNumCarga en frmCargasRealizadas
+        frmCargasRealizadas.txtNumCarga.Text = txtNumeroCargaGenerado.Text
+
+        'Hacer click al botón
+        frmCargasRealizadas.btnBuscar.PerformClick()
+
     End Sub
 
     Private Sub btnSalir_Click_1(sender As Object, e As EventArgs) Handles btnSalir.Click

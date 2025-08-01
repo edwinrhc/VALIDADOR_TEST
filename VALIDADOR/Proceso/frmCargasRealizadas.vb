@@ -312,6 +312,21 @@ Public Class frmCargasRealizadas
         Me.Close()
     End Sub
 
+    'Private Sub btnResumenCarga_Click(sender As Object, e As EventArgs) Handles btnResumenCarga.Click
+
+    '    Dim Neg As New N_VALIDADOR.NValidador
+    '    Dim Valor As String = txtNumCarga.Text
+    '    Dim EstadoCarga As DataTable = Neg.EstadodeCarga(Valor)
+
+    '    If EstadoCarga.Rows.Count > 0 Then
+
+    '        ReporteCargaPDF()
+    '    Else
+    '        MessageBox.Show("La Carga sigue en Proceso, Por favor espere hasta que cambie de estado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    '    End If
+
+    'End Sub
+
     Private Sub btnResumenCarga_Click(sender As Object, e As EventArgs) Handles btnResumenCarga.Click
 
         Dim Neg As New N_VALIDADOR.NValidador
@@ -319,10 +334,27 @@ Public Class frmCargasRealizadas
         Dim EstadoCarga As DataTable = Neg.EstadodeCarga(Valor)
 
         If EstadoCarga.Rows.Count > 0 Then
+            Dim estado As Integer = 0
+            If Not IsDBNull(EstadoCarga.Rows(0)("N_estado")) Then
+                estado = Convert.ToInt32(EstadoCarga.Rows(0)("N_estado"))
+            End If
 
-            ReporteCargaPDF()
+            Select Case estado
+                Case 3 ' EN PROCESO
+                    MessageBox.Show("La carga sigue en proceso, por favor espere hasta que finalice.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Case 2 ' REGISTRADA
+                    MessageBox.Show("La carga aún no ha sido procesada completamente. Por favor espere a que finalice su validación.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Case 1 ' TERMINADA SATISFACTORIAMENTE
+                    ReporteCargaPDF()
+                Case 0 ' TERMINADA CON ERRORES
+                    ReporteCargaPDF()
+                Case Else
+                    MessageBox.Show("El estado de la carga no es válido para generar el reporte.", "Estado no válido", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            End Select
+
+
         Else
-            MessageBox.Show("La Carga sigue en Proceso, Por favor espere hasta que cambie de estado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("La Carga sigue en Proceso, Por favor espere hasta que cambie de estado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
 
     End Sub
@@ -1239,5 +1271,7 @@ Public Class frmCargasRealizadas
         _frmDestino.Show() ' Mostrar el formulario de destino
     End Sub
 
+    Private Sub ddlEstado_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlEstado.SelectedIndexChanged
 
+    End Sub
 End Class

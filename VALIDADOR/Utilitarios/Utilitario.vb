@@ -122,8 +122,12 @@ Module Utilitario
         dt.Rows(2)(1) = "FINALIZADOS"
 
         dt.Rows.Add()
-        dt.Rows(3)(0) = "3"
-        dt.Rows(3)(1) = "EN PROCESO"
+        dt.Rows(3)(0) = "2"
+        dt.Rows(3)(1) = "REGISTRADA"
+
+        dt.Rows.Add()
+        dt.Rows(4)(0) = "3"
+        dt.Rows(4)(1) = "EN PROCESO"
 
 
         Return dt

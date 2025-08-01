@@ -1,7 +1,7 @@
 ﻿Imports Oracle.ManagedDataAccess.Client
 
 
-'Recuerda cambiar el archivo a Conexion.vb , para que funciona el progrma
+'Recuerda cambiar el archivo a Conexion.vb , para que funciona el programa
 
 Public Class Conexion
 

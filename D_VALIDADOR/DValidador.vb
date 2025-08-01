@@ -752,7 +752,7 @@ Public Class DValidador
 
 #End Region
 
-#Region "Listar los 50 ultimos registro"
+#Region "Listar los 500 ultimos registro"
     Public Function Listar50Ultimos() As DataTable
         Dim dtResultado As New DataTable()
         Try
@@ -771,7 +771,7 @@ Public Class DValidador
                                         FROM Fomcade 
                                         ORDER BY D_feccar DESC
                                     ) 
-                                    WHERE ROWNUM <= 50"
+                                    WHERE ROWNUM <= 500"
             Dim comando As New OracleCommand(sql, conexionOracle)
             Dim adaptador As New OracleDataAdapter(comando)
             adaptador.Fill(dtResultado)

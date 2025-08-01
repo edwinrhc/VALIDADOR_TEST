@@ -259,7 +259,7 @@ Partial Class frmCargarArchivos
         Me.btnCargar.Location = New System.Drawing.Point(445, 234)
         Me.btnCargar.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btnCargar.Name = "btnCargar"
-        Me.btnCargar.Size = New System.Drawing.Size(147, 56)
+        Me.btnCargar.Size = New System.Drawing.Size(178, 56)
         Me.btnCargar.TabIndex = 8
         Me.btnCargar.Text = "       CARGAR"
         Me.btnCargar.UseVisualStyleBackColor = False
@@ -375,12 +375,12 @@ Partial Class frmCargarArchivos
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(819, 48)
+        Me.Button1.Location = New System.Drawing.Point(716, 48)
         Me.Button1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(189, 43)
+        Me.Button1.Size = New System.Drawing.Size(292, 43)
         Me.Button1.TabIndex = 37
-        Me.Button1.Text = "     Consultar Carga"
+        Me.Button1.Text = "     Consulta estado de la carga"
         Me.Button1.UseVisualStyleBackColor = False
         '
         'Label8
